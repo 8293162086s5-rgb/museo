@@ -107,7 +107,24 @@ El recepcionista/guía programa o registra una visita grupal. Introduce la fecha
 ![Diagrama de Casos de Uso](Diagramacasosdeuso.jpg)
 
 
----
+
+
+### 8. Diccionario de Datos
+
+### TABLA: VISITANTE
+Información de los visitantes del museo.
+
+| Campo | Tipo | Tamaño | Clave | Descripción |
+|:---|:---|:---:|:---:|:---|
+| **IdVisitante** | INT | — | PK | Identificador único autoincremental. |
+| **Nombre** | VARCHAR | 100 | — | Nombre del visitante. |
+| **Apellido** | VARCHAR | 100 | — | Apellido del visitante. |
+| **DocumentoIdentidad** | VARCHAR | 20 | — | Cédula o pasaporte. |
+| **Edad** | INT | — | — | Edad actual. |
+| **Genero** | VARCHAR | 15 | — | Sexo del visitante (M/F). |
+| **Nacionalidad** | VARCHAR | 50 | — | País de procedencia. |
+| **Email** | VARCHAR | 100 | — | Correo electrónico (opcional). |
+
 
 
 
