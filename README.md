@@ -24,13 +24,9 @@
  # Análisis de Sistemas
 
 ## 1. Estudio del Problema
-Los museos pequeños y medianos suelen tener problemas al momento de gestionar sus colecciones y visitantes. En muchos casos, la información se maneja de forma manual, ya sea en papel o en varias hojas de cálculo separadas, sin un sistema centralizado.
+Estudio del Problema Los museos pequeños y medianos suelen enfrentar procesos manuales desorganizados para gestionar sus colecciones y visitantes. En la institución estudiada (no especificado por tratarse de un caso académico) los registros de piezas, exposiciones y visitas se llevan en papel o en múltiples hojas de cálculo dispersas, sin un sistema unificado. Esto genera duplicación de datos, errores humanos y dificultades para acceder a información histórica rápidamente. Por ejemplo, se ha documentado que reportes de inventario pueden tardar días en prepararse debido a la consolidación manual de datos. La falta de digitalización también limita el análisis estadístico de la afluencia de visitantes y el mantenimiento predictivo de piezas.
 
-Esto provoca duplicación de datos, errores humanos y dificultad para acceder a la información rápidamente. Por ejemplo, preparar un reporte de inventario puede tardar varios días porque se hace todo de forma manual. Además, al no tener un sistema digital, se limita el análisis de datos como la cantidad de visitantes o el estado de las piezas.
-
-También hay un problema importante de control, ya que no existe un seguimiento claro de los movimientos de las piezas ni un historial organizado de visitas. Esto afecta la seguridad, la organización y la toma de decisiones dentro del museo.
-
-En resumen, el problema principal es la falta de un sistema que permita gestionar toda la información de forma eficiente y segura.
+Estos problemas impactan directamente en la eficiencia operativa del museo y en la conservación del patrimonio cultural. Al no existir trazabilidad electrónica (auditorías de movimiento de piezas, historial de visitas, etc.), la administración carece de mecanismos para garantizar la seguridad y transparencia de los procesos internos. En síntesis, el problema radica en la ineficiencia y riesgo derivados de la gestión manual de la información museística, lo que motiva la necesidad de un sistema de software que centralice y automatice estas tareas.
 
 
 ## 2. Definición de Objetivos del Sistema
@@ -40,7 +36,9 @@ Se propone desarrollar una aplicación de escritorio que permita registrar, cons
 
 
 ## 3. Recolección de Información
-Se analizó la forma en que el museo maneja actualmente su información, observando cómo se registran las piezas, los visitantes y las exposiciones.
+Estudio del Problema Los museos pequeños y medianos suelen enfrentar procesos manuales desorganizados para gestionar sus colecciones y visitantes. En la institución estudiada (no especificado por tratarse de un caso académico) los registros de piezas, exposiciones y visitas se llevan en papel o en múltiples hojas de cálculo dispersas, sin un sistema unificado. Esto genera duplicación de datos, errores humanos y dificultades para acceder a información histórica rápidamente. Por ejemplo, se ha documentado que reportes de inventario pueden tardar días en prepararse debido a la consolidación manual de datos. La falta de digitalización también limita el análisis estadístico de la afluencia de visitantes y el mantenimiento predictivo de piezas.
 
-A partir de este análisis, se identificaron los problemas existentes y se definieron los procesos que servirán como base para el desarrollo del nuevo sistema.
+Estos problemas impactan directamente en la eficiencia operativa del museo y en la conservación del patrimonio cultural. Al no existir trazabilidad electrónica (auditorías de movimiento de piezas, historial de visitas, etc.), la administración carece de mecanismos para garantizar la seguridad y transparencia de los procesos internos. En síntesis, el problema radica en la ineficiencia y riesgo derivados de la gestión manual de la información museística, lo que motiva la necesidad de un sistema de software que centralice y automatice estas tareas.
+A partir de esta información se establecieron los trabajos actuales, los cuales sirvieron de base para modelar los procesos del sistema propuesto y garantizar que la solución tecnológica se adaptara a las necesidades reales del museo.
+
 
