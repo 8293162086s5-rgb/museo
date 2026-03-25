@@ -42,3 +42,55 @@ Estos problemas impactan directamente en la eficiencia operativa del museo y en 
 A partir de esta información se establecieron los trabajos actuales, los cuales sirvieron de base para modelar los procesos del sistema propuesto y garantizar que la solución tecnológica se adaptara a las necesidades reales del museo.
 
 
+## 4. Modelo del Sistema Actual (AS-IS)
+Actualmente no existe un sistema automatizado. Todo se realiza de forma manual:
+
+1. El recepcionista registra los visitantes en papel.  
+2. Los guías actualizan archivos de Excel después de cada visita.  
+3. El administrador recopila toda la información manualmente para generar reportes.  
+
+Este proceso genera errores, pérdida de información y duplicación de datos. Por ejemplo, un mismo visitante puede ser registrado varias veces debido a la falta de control.
+
+
+
+## 5. Modelo del Sistema Propuesto (TO-BE)
+Se propone desarrollar una aplicación de escritorio organizada en tres capas: presentación, negocio y datos.
+
+### El sistema permitirá:
+
+1. Gestionar empleados y guías  
+2. Registrar visitantes  
+3. Administrar piezas y exposiciones  
+4. Registrar visitas guiadas  
+5. Generar reportes  
+
+Toda la información se almacenará en una base de datos, lo que permitirá evitar duplicaciones y mejorar el acceso a los datos. Además, cada acción quedará registrada, permitiendo llevar un control y seguimiento adecuado.
+
+
+
+## 6. Requerimientos Funcionales y No Funcionales
+
+### 6.1 Requerimientos Funcionales
+1. Registrar información completa de las piezas del museo  
+2. Administrar exposiciones  
+3. Relacionar piezas con exposiciones  
+4. Registrar visitantes y guías  
+5. Controlar los movimientos de las piezas  
+6. Realizar búsquedas de información  
+7. Generar reportes  
+8. Registrar visitas guiadas  
+
+### 6.2 Requerimientos No Funcionales
+1. El sistema debe ser una aplicación de escritorio para Windows  
+2. Debe ser fácil de usar  
+3. La información debe almacenarse de forma segura  
+4. Debe requerir usuario y contraseña  
+5. Debe ser rápido en las consultas  
+6. El código debe permitir mantenimiento y mejoras
+
+
+
+
+
+
+
