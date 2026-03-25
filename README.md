@@ -128,3 +128,18 @@ Información de los visitantes del museo.
 
 
 
+
+### TABLA: EMPLEADO
+Información del personal administrativo y guías del museo.
+
+| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
+|:--- |:--- |:---:|:---:|:--- |
+| **IdEmpleado** | INT | — | PK | Identificador único del empleado. |
+| **Nombre** | VARCHAR | 100 | — | Nombre del trabajador. |
+| **Apellido** | VARCHAR | 100 | — | Apellido del trabajador. |
+| **Cargo** | VARCHAR | 50 | — | Rol desempeñado (Guía, Recepcionista, etc.). |
+| **Especialidad** | VARCHAR | 100 | — | Especialización (Arte, Historia, etc.). |
+| **Turno** | VARCHAR | 20 | — | Horario de trabajo asignado. |
+| **Usuario** | VARCHAR | 50 | — | Nombre de usuario para el inicio de sesión. |
+| **Contraseña** | VARCHAR | 200 | — | Contraseña cifrada para la seguridad del acceso. |
+
