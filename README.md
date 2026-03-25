@@ -90,7 +90,22 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 
 
+## 7. Diagrama de Casos de Uso
 
+
+
+![Diagrama de Casos de Uso](Diagramacasosdeuso.jpg)
+
+> **Detalle de los Casos de Uso:**
+
+* **Iniciar sesión:** Control de acceso mediante credenciales para asegurar la información.
+* **Gestionar Empleados y Guías:** Alta, baja y modificación de los datos del personal y sus turnos.
+* **Gestionar Piezas:** Administración del inventario artístico (autores, fechas y estados).
+* **Gestionar Exposiciones:** Organización de las salas y las obras que se presentan en cada una.
+* **Gestionar Movimientos:** Registro de traslados físicos de las piezas para auditoría.
+* **Realizar Visitas Guiadas:** Control de los recorridos, cantidad de visitantes y guía asignado.
+
+---
 
 
 
