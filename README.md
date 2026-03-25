@@ -143,3 +143,36 @@ Información del personal administrativo y guías del museo.
 | **Usuario** | VARCHAR | 50 | — | Nombre de usuario para el inicio de sesión. |
 | **Contraseña** | VARCHAR | 200 | — | Contraseña cifrada para la seguridad del acceso. |
 
+
+
+
+
+### TABLA: PIEZA
+Registro de las piezas museísticas
+
+| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
+|:--- |:--- |:---:|:---:|:--- |
+| **IdPieza** | INT | — | PK | Identificador único de la pieza museística. |
+| **Nombre** | VARCHAR | 150 | — | Nombre o título de la obra/objeto. |
+| **Tipo** | VARCHAR | 50 | — | Categoría (Pintura, Escultura, Arqueología, etc.). |
+| **Autor** | VARCHAR | 100 | — | Nombre del creador o cultura de origen. |
+| **Año** | INT | — | — | Año de creación o periodo histórico. |
+| **Estado** | VARCHAR | 100 | — | Condición física (Excelente, Restauración, Dañado). |
+| **Ubicacion** | VARCHAR | 100 | — | Sala o depósito donde se encuentra actualmente. |
+
+
+
+
+
+### TABLA: EXPOSICION
+Registro de exposiciones organizadas por el museo.
+
+| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
+|:--- |:--- |:---:|:---:|:--- |
+| **IdExposicion** | INT | — | PK | Identificador único de la exposición. |
+| **Nombre** | VARCHAR | 100 | — | Título de la muestra o evento. |
+| **Tipo** | VARCHAR | 50 | — | Naturaleza del evento (Temporal, Permanente, Itinerante). |
+| **FechaInicio** | DATE | — | — | Fecha de apertura al público. |
+| **FechaFin** | DATE | — | — | Fecha de clausura programada. |
+| **Ubicacion** | VARCHAR | 100 | — | Sala, pabellón o área asignada dentro del museo. |
+
