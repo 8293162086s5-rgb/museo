@@ -109,7 +109,7 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 
 
-### 8. Diccionario de Datos
+## 8. Diccionario de Datos
 
 ### TABLA: VISITANTE
 Información de los visitantes del museo.
