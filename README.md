@@ -23,26 +23,26 @@
    
  # Análisis de Sistemas
 
-## 1. Estudio del Problema
+ ## 1. Estudio del Problema
 Estudio del Problema Los museos pequeños y medianos suelen enfrentar procesos manuales desorganizados para gestionar sus colecciones y visitantes. En la institución estudiada (no especificado por tratarse de un caso académico) los registros de piezas, exposiciones y visitas se llevan en papel o en múltiples hojas de cálculo dispersas, sin un sistema unificado. Esto genera duplicación de datos, errores humanos y dificultades para acceder a información histórica rápidamente. Por ejemplo, se ha documentado que reportes de inventario pueden tardar días en prepararse debido a la consolidación manual de datos. La falta de digitalización también limita el análisis estadístico de la afluencia de visitantes y el mantenimiento predictivo de piezas.
 
 Estos problemas impactan directamente en la eficiencia operativa del museo y en la conservación del patrimonio cultural. Al no existir trazabilidad electrónica (auditorías de movimiento de piezas, historial de visitas, etc.), la administración carece de mecanismos para garantizar la seguridad y transparencia de los procesos internos. En síntesis, el problema radica en la ineficiencia y riesgo derivados de la gestión manual de la información museística, lo que motiva la necesidad de un sistema de software que centralice y automatice estas tareas.
 
 
-## 2. Definición de Objetivos del Sistema
+ ## 2. Definición de Objetivos del Sistema
 El objetivo principal del sistema es digitalizar y centralizar los procesos del museo para mejorar la organización y el control de la información.
 
 Se propone desarrollar una aplicación de escritorio que permita registrar, consultar y controlar todos los datos desde un solo lugar. Esta aplicación tendrá una interfaz fácil de usar y estará organizada en diferentes capas para su correcto funcionamiento.
 
 
-## 3. Recolección de Información
+ ## 3. Recolección de Información
 Estudio del Problema Los museos pequeños y medianos suelen enfrentar procesos manuales desorganizados para gestionar sus colecciones y visitantes. En la institución estudiada (no especificado por tratarse de un caso académico) los registros de piezas, exposiciones y visitas se llevan en papel o en múltiples hojas de cálculo dispersas, sin un sistema unificado. Esto genera duplicación de datos, errores humanos y dificultades para acceder a información histórica rápidamente. Por ejemplo, se ha documentado que reportes de inventario pueden tardar días en prepararse debido a la consolidación manual de datos. La falta de digitalización también limita el análisis estadístico de la afluencia de visitantes y el mantenimiento predictivo de piezas.
 
 Estos problemas impactan directamente en la eficiencia operativa del museo y en la conservación del patrimonio cultural. Al no existir trazabilidad electrónica (auditorías de movimiento de piezas, historial de visitas, etc.), la administración carece de mecanismos para garantizar la seguridad y transparencia de los procesos internos. En síntesis, el problema radica en la ineficiencia y riesgo derivados de la gestión manual de la información museística, lo que motiva la necesidad de un sistema de software que centralice y automatice estas tareas.
 A partir de esta información se establecieron los trabajos actuales, los cuales sirvieron de base para modelar los procesos del sistema propuesto y garantizar que la solución tecnológica se adaptara a las necesidades reales del museo.
 
 
-## 4. Modelo del Sistema Actual (AS-IS)
+ ## 4. Modelo del Sistema Actual (AS-IS)
 Actualmente no existe un sistema automatizado. Todo se realiza de forma manual:
 
 1. El recepcionista registra los visitantes en papel.  
@@ -53,10 +53,10 @@ Este proceso genera errores, pérdida de información y duplicación de datos. P
 
 
 
-## 5. Modelo del Sistema Propuesto (TO-BE)
+ ## 5. Modelo del Sistema Propuesto (TO-BE)
 Se propone desarrollar una aplicación de escritorio organizada en tres capas: presentación, negocio y datos.
 
-### El sistema permitirá:
+  ### El sistema permitirá:
 
 1. Gestionar empleados y guías  
 2. Registrar visitantes  
@@ -68,9 +68,9 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 
 
-## 6. Requerimientos Funcionales y No Funcionales
+ ## 6. Requerimientos Funcionales y No Funcionales
 
-### 6.1 Requerimientos Funcionales
+  ### 6.1 Requerimientos Funcionales
 1. Registrar información completa de las piezas del museo  
 2. Administrar exposiciones  
 3. Relacionar piezas con exposiciones  
@@ -80,7 +80,7 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 7. Generar reportes  
 8. Registrar visitas guiadas  
 
-### 6.2 Requerimientos No Funcionales
+  ### 6.2 Requerimientos No Funcionales
 1. El sistema debe ser una aplicación de escritorio para Windows  
 2. Debe ser fácil de usar  
 3. La información debe almacenarse de forma segura  
