@@ -92,18 +92,20 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 ## 7. Diagrama de Casos de Uso
 
+#### 1.	Iniciar sesión:
+El usuario (administrador o recepcionista/guía) ingresa su nombre de usuario y contraseña. El sistema valida las credenciales. Si son correctas, se accede a las funciones disponibles según el rol del usuario.
+#### 2.	Gestionar Empleados y Guías: 
+El administrador crea, edita o elimina registros de empleados y guías (datos personales, especialidad, turno, etc.), asegurando que solo él pueda modificar esta información.
+#### 3.	Gestionar Piezas:
+El administrador registra nuevas piezas del museo o actualiza la información de piezas existentes (código de inventario, descripción, autor, estado, etc.). Este caso permite mantener el inventario digital actualizado.
+#### 4.	Registrar Movimiento de Piezas: 
+El administrador ingresa cada traslado o cambio de ubicación de una pieza (fecha, origen, destino, motivo). El sistema guarda estos datos para auditoría interna, facilitando el seguimiento del recorrido histórico de cada pieza.
+#### 5.	Registrar Visita Guiada: 
+El recepcionista/guía programa o registra una visita grupal. Introduce la fecha de la visita, la cantidad de asistentes, el guía asignado y la exposición correspondiente. El sistema guarda el registro y asocia al visitante (o grupo) con la visita planeada.
 
 
 ![Diagrama de Casos de Uso](Diagramacasosdeuso.jpg)
 
-> **Detalle de los Casos de Uso:**
-
-* **Iniciar sesión:** Control de acceso mediante credenciales para asegurar la información.
-* **Gestionar Empleados y Guías:** Alta, baja y modificación de los datos del personal y sus turnos.
-* **Gestionar Piezas:** Administración del inventario artístico (autores, fechas y estados).
-* **Gestionar Exposiciones:** Organización de las salas y las obras que se presentan en cada una.
-* **Gestionar Movimientos:** Registro de traslados físicos de las piezas para auditoría.
-* **Realizar Visitas Guiadas:** Control de los recorridos, cantidad de visitantes y guía asignado.
 
 ---
 
