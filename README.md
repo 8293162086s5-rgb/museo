@@ -121,7 +121,7 @@ Información de los visitantes del museo.
 | **Apellido** | VARCHAR | 100 |   | Apellido del visitante. |
 | **DocumentoIdentidad** | VARCHAR | 20 |   | Cédula o pasaporte. |
 | **Edad** | INT |   |   | Edad actual. |
-| **Genero** | VARCHAR | 15 |   | Sexo del visitante (M/F). |
+| **Genero** | VARCHAR | 20 |   | Sexo del visitante (M/F). |
 | **Nacionalidad** | VARCHAR | 50 |   | País de procedencia. |
 | **Email** | VARCHAR | 100 |   | Correo electrónico (opcional). |
 
@@ -156,6 +156,7 @@ Registro de las piezas museísticas
 | **Nombre** | VARCHAR | 150 |   | Nombre o título de la obra/objeto. |
 | **Tipo** | VARCHAR | 50 |   | Categoría (Pintura, Escultura, Arqueología, etc.). |
 | **Autor** | VARCHAR | 100 |   | Nombre del creador o cultura de origen. |
+| **Material** | VARCHAR | 100 |   | Composicion fisica (Marmol, Bronce, Piedra, Hierro, Otros metales). |
 | **Año** | INT |   |   | Año de creación o periodo histórico. |
 | **Estado** | VARCHAR | 100 |   | Condición física (Excelente, Restauración, Dañado). |
 | **Ubicacion** | VARCHAR | 100 |   | Sala o depósito donde se encuentra actualmente. |
@@ -174,7 +175,7 @@ Registro de exposiciones organizadas por el museo.
 | **Tipo** | VARCHAR | 50 |   | Naturaleza del evento (Temporal, Permanente, Itinerante). |
 | **FechaInicio** | DATE |   |   | Fecha de apertura al público. |
 | **FechaFin** | DATE |   |   | Fecha de clausura programada. |
-| **Ubicacion** | VARCHAR | 100 |   | Sala, pabellón o área asignada dentro del museo. |
+| **Sala** | VARCHAR | 100 |   | Sala, pabellón o área asignada dentro del museo. |
 
 
 
