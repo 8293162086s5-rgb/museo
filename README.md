@@ -107,16 +107,6 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 ![Diagrama de Casos de Uso](Diagramacasosdeuso.jpg)
 
 
-### TABLA: USUARIO
-
-| Campo | Tipo | Tamaño | Clave | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **IdUsuario** | INT |   | PK | Identificador único del registro de usuario (Autoincremental). |
-| **NombreUsuario** | VARCHAR | 50 |   | Alias o login único para el acceso al sistema. |
-| **Contrasena** | VARCHAR | 255 |   | Clave de acceso (validada en la Capa de Datos). |
-| **NombreCompleto** | VARCHAR | 200 |   | Nombre real del empleado o administrador. |
-| **Rol** | VARCHAR | 50 |   | Perfil de permisos (Ej: Administrador, Recepción, Guía). |
-| **Estado** | VARCHAR | 20 |   | Filtro de acceso (Solo usuarios 'Activo' pueden loguearse). |
 
 ## 8. Diccionario de Datos
 
@@ -217,6 +207,21 @@ DetallE de los traslados físicos de las piezas, permitiendo rastrear el origen,
 | **TipoMovimiento** | VARCHAR | 50 |   | Naturaleza del traslado (Interno, Externo, Préstamo). |
 | **Origen** | VARCHAR | 100 |   | Ubicación inicial (Ej: Sala 1, Depósito A). |
 | **Destino** | VARCHAR | 100 |   | Nueva ubicación asignada a la pieza. |
+
+
+
+### TABLA: USUARIO
+Gestiona las credenciales y niveles de acceso al sistema del museo.
+
+
+| Campo | Tipo | Tamaño | Clave | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **IdUsuario** | INT |   | PK | Identificador único del registro de usuario (Autoincremental). |
+| **NombreUsuario** | VARCHAR | 50 |   | Alias o login único para el acceso al sistema. |
+| **Contrasena** | VARCHAR | 255 |   | Clave de acceso (validada en la Capa de Datos). |
+| **NombreCompleto** | VARCHAR | 200 |   | Nombre real del empleado o administrador. |
+| **Rol** | VARCHAR | 50 |   | Perfil de permisos (Ej: Administrador, Recepción, Guía). |
+| **Estado** | VARCHAR | 20 |   | Filtro de acceso (Solo usuarios 'Activo' pueden loguearse). |
 
 
 
