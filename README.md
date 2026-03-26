@@ -116,14 +116,14 @@ Información de los visitantes del museo.
 
 | Campo | Tipo | Tamaño | Clave | Descripción |
 |:---|:---|:---:|:---:|:---|
-| **IdVisitante** | INT | — | PK | Identificador único autoincremental. |
-| **Nombre** | VARCHAR | 100 | — | Nombre del visitante. |
-| **Apellido** | VARCHAR | 100 | — | Apellido del visitante. |
-| **DocumentoIdentidad** | VARCHAR | 20 | — | Cédula o pasaporte. |
-| **Edad** | INT | — | — | Edad actual. |
-| **Genero** | VARCHAR | 15 | — | Sexo del visitante (M/F). |
-| **Nacionalidad** | VARCHAR | 50 | — | País de procedencia. |
-| **Email** | VARCHAR | 100 | — | Correo electrónico (opcional). |
+| **IdVisitante** | INT |   | PK | Identificador único autoincremental. |
+| **Nombre** | VARCHAR | 100 |   | Nombre del visitante. |
+| **Apellido** | VARCHAR | 100 |   | Apellido del visitante. |
+| **DocumentoIdentidad** | VARCHAR | 20 |   | Cédula o pasaporte. |
+| **Edad** | INT |   |   | Edad actual. |
+| **Genero** | VARCHAR | 15 |   | Sexo del visitante (M/F). |
+| **Nacionalidad** | VARCHAR | 50 |   | País de procedencia. |
+| **Email** | VARCHAR | 100 |   | Correo electrónico (opcional). |
 
 
 
@@ -134,14 +134,14 @@ Información del personal administrativo y guías del museo.
 
 | Campo | Tipo de Dato | Tamaño | Clave | Descripción |
 |:--- |:--- |:---:|:---:|:--- |
-| **IdEmpleado** | INT | — | PK | Identificador único del empleado. |
-| **Nombre** | VARCHAR | 100 | — | Nombre del trabajador. |
-| **Apellido** | VARCHAR | 100 | — | Apellido del trabajador. |
-| **Cargo** | VARCHAR | 50 | — | Rol desempeñado (Guía, Recepcionista, etc.). |
-| **Especialidad** | VARCHAR | 100 | — | Especialización (Arte, Historia, etc.). |
-| **Turno** | VARCHAR | 20 | — | Horario de trabajo asignado. |
-| **Usuario** | VARCHAR | 50 | — | Nombre de usuario para el inicio de sesión. |
-| **Contraseña** | VARCHAR | 200 | — | Contraseña cifrada para la seguridad del acceso. |
+| **IdEmpleado** | INT |   | PK | Identificador único del empleado. |
+| **Nombre** | VARCHAR | 100 |   | Nombre del trabajador. |
+| **Apellido** | VARCHAR | 100 |   | Apellido del trabajador. |
+| **Cargo** | VARCHAR | 50 |   | Rol desempeñado (Guía, Recepcionista, etc.). |
+| **Especialidad** | VARCHAR | 100 |   | Especialización (Arte, Historia, etc.). |
+| **Turno** | VARCHAR | 20 |   | Horario de trabajo asignado. |
+| **Usuario** | VARCHAR | 50 |   | Nombre de usuario para el inicio de sesión. |
+| **Contraseña** | VARCHAR | 200 |   | Contraseña cifrada para la seguridad del acceso. |
 
 
 
@@ -152,13 +152,13 @@ Registro de las piezas museísticas
 
 | Campo | Tipo de Dato | Tamaño | Clave | Descripción |
 |:--- |:--- |:---:|:---:|:--- |
-| **IdPieza** | INT | — | PK | Identificador único de la pieza museística. |
-| **Nombre** | VARCHAR | 150 | — | Nombre o título de la obra/objeto. |
-| **Tipo** | VARCHAR | 50 | — | Categoría (Pintura, Escultura, Arqueología, etc.). |
-| **Autor** | VARCHAR | 100 | — | Nombre del creador o cultura de origen. |
-| **Año** | INT | — | — | Año de creación o periodo histórico. |
-| **Estado** | VARCHAR | 100 | — | Condición física (Excelente, Restauración, Dañado). |
-| **Ubicacion** | VARCHAR | 100 | — | Sala o depósito donde se encuentra actualmente. |
+| **IdPieza** | INT |   | PK | Identificador único de la pieza museística. |
+| **Nombre** | VARCHAR | 150 |   | Nombre o título de la obra/objeto. |
+| **Tipo** | VARCHAR | 50 |   | Categoría (Pintura, Escultura, Arqueología, etc.). |
+| **Autor** | VARCHAR | 100 |   | Nombre del creador o cultura de origen. |
+| **Año** | INT |   |   | Año de creación o periodo histórico. |
+| **Estado** | VARCHAR | 100 |   | Condición física (Excelente, Restauración, Dañado). |
+| **Ubicacion** | VARCHAR | 100 |   | Sala o depósito donde se encuentra actualmente. |
 
 
 
@@ -169,12 +169,12 @@ Registro de exposiciones organizadas por el museo.
 
 | Campo | Tipo de Dato | Tamaño | Clave | Descripción |
 |:--- |:--- |:---:|:---:|:--- |
-| **IdExposicion** | INT | — | PK | Identificador único de la exposición. |
-| **Nombre** | VARCHAR | 100 | — | Título de la muestra o evento. |
-| **Tipo** | VARCHAR | 50 | — | Naturaleza del evento (Temporal, Permanente, Itinerante). |
-| **FechaInicio** | DATE | — | — | Fecha de apertura al público. |
-| **FechaFin** | DATE | — | — | Fecha de clausura programada. |
-| **Ubicacion** | VARCHAR | 100 | — | Sala, pabellón o área asignada dentro del museo. |
+| **IdExposicion** | INT |   | PK | Identificador único de la exposición. |
+| **Nombre** | VARCHAR | 100 |   | Título de la muestra o evento. |
+| **Tipo** | VARCHAR | 50 |   | Naturaleza del evento (Temporal, Permanente, Itinerante). |
+| **FechaInicio** | DATE |   |   | Fecha de apertura al público. |
+| **FechaFin** | DATE |   |   | Fecha de clausura programada. |
+| **Ubicacion** | VARCHAR | 100 |   | Sala, pabellón o área asignada dentro del museo. |
 
 
 
@@ -185,11 +185,11 @@ Registro de los recorridos guiados, vinculando a los grupos de visitantes con el
 
 | Campo | Tipo de Dato | Tamaño | Clave | Descripción |
 |:--- |:--- |:---:|:---:|:--- |
-| **IdVisita** | INT | — | PK | Identificador único del registro de visita. |
-| **Fecha** | DATE | — | — | Fecha en la que se realiza el recorrido. |
-| **CantidadPersonas** | INT | — | — | Número total de asistentes en el grupo. |
-| **IdGuia** | INT | — | FK | Referencia al empleado asignado como guía. |
-| **IdExposicion** | INT | — | FK | Referencia a la exposición que se está visitando. |
+| **IdVisita** | INT |   | PK | Identificador único del registro de visita. |
+| **Fecha** | DATE |   |   | Fecha en la que se realiza el recorrido. |
+| **CantidadPersonas** | INT |   |   | Número total de asistentes en el grupo. |
+| **IdGuia** | INT |   | FK | Referencia al empleado asignado como guía. |
+| **IdExposicion** | INT |   | FK | Referencia a la exposición que se está visitando. |
 
 
 
@@ -201,12 +201,12 @@ DetallE de los traslados físicos de las piezas, permitiendo rastrear el origen,
 
 | Campo | Tipo de Dato | Tamaño | Clave | Descripción |
 |:--- |:--- |:---:|:---:|:--- |
-| **IdMovimiento** | INT | — | PK | Identificador único del registro de movimiento. |
-| **IdPieza** | INT | — | FK | Referencia a la pieza que ha sido trasladada. |
-| **FechaMovimiento** | DATE | — | — | Fecha exacta en la que se realizó el traslado. |
-| **TipoMovimiento** | VARCHAR | 50 | — | Naturaleza del traslado (Interno, Externo, Préstamo). |
-| **Origen** | VARCHAR | 100 | — | Ubicación inicial (Ej: Sala 1, Depósito A). |
-| **Destino** | VARCHAR | 100 | — | Nueva ubicación asignada a la pieza. |
+| **IdMovimiento** | INT |   | PK | Identificador único del registro de movimiento. |
+| **IdPieza** | INT |   | FK | Referencia a la pieza que ha sido trasladada. |
+| **FechaMovimiento** | DATE |   |   | Fecha exacta en la que se realizó el traslado. |
+| **TipoMovimiento** | VARCHAR | 50 |   | Naturaleza del traslado (Interno, Externo, Préstamo). |
+| **Origen** | VARCHAR | 100 |   | Ubicación inicial (Ej: Sala 1, Depósito A). |
+| **Destino** | VARCHAR | 100 |   | Nueva ubicación asignada a la pieza. |
 
 
 
