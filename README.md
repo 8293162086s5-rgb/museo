@@ -176,3 +176,37 @@ Registro de exposiciones organizadas por el museo.
 | **FechaFin** | DATE | — | — | Fecha de clausura programada. |
 | **Ubicacion** | VARCHAR | 100 | — | Sala, pabellón o área asignada dentro del museo. |
 
+
+
+
+
+#### TABLA: VISITA
+Registro de los recorridos guiados, vinculando a los grupos de visitantes con el personal (guías) y las muestras culturales específicas.
+
+| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
+|:--- |:--- |:---:|:---:|:--- |
+| **IdVisita** | INT | — | PK | Identificador único del registro de visita. |
+| **Fecha** | DATE | — | — | Fecha en la que se realiza el recorrido. |
+| **CantidadPersonas** | INT | — | — | Número total de asistentes en el grupo. |
+| **IdGuia** | INT | — | FK | Referencia al empleado asignado como guía. |
+| **IdExposicion** | INT | — | FK | Referencia a la exposición que se está visitando. |
+
+
+
+
+
+
+#### TABLA: MOVIMIENTO_PIEZA
+DetallE de los traslados físicos de las piezas, permitiendo rastrear el origen, destino y tipo de movimiento (interno o externo).
+
+| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
+|:--- |:--- |:---:|:---:|:--- |
+| **IdMovimiento** | INT | — | PK | Identificador único del registro de movimiento. |
+| **IdPieza** | INT | — | FK | Referencia a la pieza que ha sido trasladada. |
+| **FechaMovimiento** | DATE | — | — | Fecha exacta en la que se realizó el traslado. |
+| **TipoMovimiento** | VARCHAR | 50 | — | Naturaleza del traslado (Interno, Externo, Préstamo). |
+| **Origen** | VARCHAR | 100 | — | Ubicación inicial (Ej: Sala 1, Depósito A). |
+| **Destino** | VARCHAR | 100 | — | Nueva ubicación asignada a la pieza. |
+
+
+
