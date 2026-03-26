@@ -111,12 +111,12 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 | Campo | Tipo | Tamaño | Clave | Descripción |
 | :--- | :--- | :--- | :--- | :--- |
-| **IdUsuario** | INT | - | PK | Identificador único del registro de usuario (Autoincremental). |
-| **NombreUsuario** | VARCHAR | 50 | - | Alias o login único para el acceso al sistema. |
-| **Contrasena** | VARCHAR | 255 | - | Clave de acceso (validada en la Capa de Datos). |
-| **NombreCompleto** | VARCHAR | 200 | - | Nombre real del empleado o administrador. |
-| **Rol** | VARCHAR | 50 | - | Perfil de permisos (Ej: Administrador, Recepción, Guía). |
-| **Estado** | VARCHAR | 20 | - | Filtro de acceso (Solo usuarios 'Activo' pueden loguearse). |
+| **IdUsuario** | INT |   | PK | Identificador único del registro de usuario (Autoincremental). |
+| **NombreUsuario** | VARCHAR | 50 |   | Alias o login único para el acceso al sistema. |
+| **Contrasena** | VARCHAR | 255 |   | Clave de acceso (validada en la Capa de Datos). |
+| **NombreCompleto** | VARCHAR | 200 |   | Nombre real del empleado o administrador. |
+| **Rol** | VARCHAR | 50 |   | Perfil de permisos (Ej: Administrador, Recepción, Guía). |
+| **Estado** | VARCHAR | 20 |   | Filtro de acceso (Solo usuarios 'Activo' pueden loguearse). |
 
 ## 8. Diccionario de Datos
 
