@@ -14,12 +14,23 @@
      6.2 Requerimientos No Funcionales
   7. Diagrama de Casos de Uso  
   8. Diccionario de Datos  
-     TABLA: VISITANTE  
-     TABLA: EMPLEADO  
-     TABLA: PIEZA  
-     TABLA: EXPOSICION  
-     TABLA: VISITA  
-     TABLA: MOVIMIENTO_PIEZA
+     TABLA: CONTRATO  
+     TABLA: DONACION  
+     TABLA: EMPLEADO
+     TABLA: ENTRADA
+     TABLA: EVENTO
+     TABLA: EXPOSICION
+     TABLA: GUIA
+     TABLA: INVENTARIO
+     TABLA: MANTENIMIENTO
+     TABLA: PIEZA
+     TABLA: PRESTAMO
+     TABLA: PROVEEDOR
+     TABLA: REPORTE
+     TABLA: RESERVA
+     TABLA: SALA  
+     TABLA: USUARIO  
+     TABLA: VISITANTE
    
  # Análisis de Sistemas
 
@@ -110,118 +121,205 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 ## 8. Diccionario de Datos
 
-### TABLA: VISITANTE
-Información de los visitantes del museo.
-
-| Campo | Tipo | Tamaño | Clave | Descripción |
-|:---|:---|:---:|:---:|:---|
-| **IdVisitante** | INT |   | PK | Identificador único autoincremental. |
-| **Nombre** | VARCHAR | 100 |   | Nombre del visitante. |
-| **Apellido** | VARCHAR | 100 |   | Apellido del visitante. |
-| **DocumentoIdentidad** | VARCHAR | 20 |   | Cédula o pasaporte. |
-| **Edad** | INT |   |   | Edad actual. |
-| **Genero** | VARCHAR | 20 |   | Sexo del visitante (M/F). |
-| **Nacionalidad** | VARCHAR | 50 |   | País de procedencia. |
-| **Email** | VARCHAR | 100 |   | Correo electrónico (opcional). |
+### TABLA: CONTRATO
+IdContrato (INT, PK): Identificador del contrato
+NumeroContrato (VARCHAR): Número del contrato
+NombreProveedor (VARCHAR): Nombre del proveedor
+Descripcion (VARCHAR): Descripción del contrato
+Tipo (VARCHAR): Tipo de contrato
+MontoTotal (DECIMAL): Monto total
+FechaInicio (DATE): Fecha de inicio
+FechaVencimiento (DATE): Fecha de vencimiento
+Estado (VARCHAR): Estado del contrato
+Observaciones (VARCHAR): Comentarios adicionales
 
 
+
+### TABLA: DONACION
+IdDonacion (INT, PK): Identificador de la donación
+NombreDonante (VARCHAR): Nombre del donante
+EmailDonante (VARCHAR): Correo del donante
+TelefonoDonante (VARCHAR): Teléfono
+Tipo (VARCHAR): Tipo de donación
+Descripcion (VARCHAR): Descripción
+ValorEstimado (DECIMAL): Valor estimado
+FechaDonacion (DATE): Fecha
+Estado (VARCHAR): Estado
 
 
 
 ### TABLA: EMPLEADO
-Información del personal administrativo y guías del museo.
-
-| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
-|:--- |:--- |:---:|:---:|:--- |
-| **IdEmpleado** | INT |   | PK | Identificador único del empleado. |
-| **Nombre** | VARCHAR | 100 |   | Nombre del trabajador. |
-| **Apellido** | VARCHAR | 100 |   | Apellido del trabajador. |
-| **Cargo** | VARCHAR | 50 |   | Rol desempeñado (Guía, Recepcionista, etc.). |
-| **Especialidad** | VARCHAR | 100 |   | Especialización (Arte, Historia, etc.). |
-| **Turno** | VARCHAR | 20 |   | Horario de trabajo asignado. |
-| **Usuario** | VARCHAR | 50 |   | Nombre de usuario para el inicio de sesión. |
-| **Contraseña** | VARCHAR | 200 |   | Contraseña cifrada para la seguridad del acceso. |
+IdEmpleado (PK): Identificador
+Nombre: Nombre
+Apellido: Apellido
+Cargo: Cargo
+FechaIngreso: Fecha de ingreso
+Telefono: Teléfono
+Email: Correo
+Estado: Estado
 
 
 
+### TABLA: ENTRADA
+IdEntrada (INT, PK): Identificador
+NombreVisitante (VARCHAR): Nombre del visitante
+Tipo (VARCHAR): Tipo de entrada
+Precio (DECIMAL): Precio
+Cantidad (INT): Cantidad
+Fecha (DATE): Fecha
+MetodoPago (VARCHAR): Método de pago
+Observaciones (VARCHAR): Observaciones
+
+
+
+#### TABLA: EVENTO
+IdEvento (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Tipo (VARCHAR): Tipo
+Responsable (VARCHAR): Responsable
+CapacidadMaxima (INT): Capacidad máxima
+FechaInicio (DATE): Fecha de inicio
+FechaFin (DATE): Fecha de fin
+Estado (VARCHAR): Estado
+Descripcion (VARCHAR): Descripción
+
+
+
+
+#### TABLA: EXPOSICION
+IdExposicion (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Descripcion (VARCHAR): Descripción
+FechaInicio (DATE): Fecha de inicio
+FechaFin (DATE): Fecha de fin
+Sala (VARCHAR): Sala
+Responsable (VARCHAR): Responsable
+
+
+
+### TABLA: GUIA
+IdGuia (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Apellido (VARCHAR): Apellido
+Telefono (VARCHAR): Teléfono
+Email (VARCHAR): Correo
+Idioma (VARCHAR): Idioma
+Estado (VARCHAR): Estado
+
+
+### TABLA: INVENTARIO
+IdInventario (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+CodigoInventario (VARCHAR): Código
+Categoria (VARCHAR): Categoría
+Epoca (VARCHAR): Época
+Material (VARCHAR): Material
+Ubicacion (VARCHAR): Ubicación
+ValorEstimado (DECIMAL): Valor estimado
+Estado (VARCHAR): Estado
+FechaIngreso (DATE): Fecha de ingreso
+Descripcion (VARCHAR): Descripción
+
+
+### TABLA: MANTENIMIENTO
+IdMantenimiento (INT, PK): Identificador
+TipoMantenimiento (VARCHAR): Tipo
+Descripcion (VARCHAR): Descripción
+Area (VARCHAR): Área
+Responsable (VARCHAR): Responsable
+FechaInicio (DATE): Fecha de inicio
+FechaFin (DATE): Fecha de fin
+Costo (DECIMAL): Costo
+Estado (VARCHAR): Estado
+Observaciones (VARCHAR): Observaciones
 
 
 ### TABLA: PIEZA
-Registro de las piezas museísticas
-
-| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
-|:--- |:--- |:---:|:---:|:--- |
-| **IdPieza** | INT |   | PK | Identificador único de la pieza museística. |
-| **Nombre** | VARCHAR | 150 |   | Nombre o título de la obra/objeto. |
-| **Tipo** | VARCHAR | 50 |   | Categoría (Pintura, Escultura, Arqueología, etc.). |
-| **Autor** | VARCHAR | 100 |   | Nombre del creador o cultura de origen. |
-| **Material** | VARCHAR | 100 |   | Composicion fisica (Marmol, Bronce, Piedra, Hierro, Otros metales). |
-| **Año** | INT |   |   | Año de creación o periodo histórico. |
-| **Estado** | VARCHAR | 100 |   | Condición física (Excelente, Restauración, Dañado). |
-| **Ubicacion** | VARCHAR | 100 |   | Sala o depósito donde se encuentra actualmente. |
+IdPieza (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Descripcion (VARCHAR): Descripción
+Epoca (VARCHAR): Época
+Material (VARCHAR): Material
+EstadoConservacion (VARCHAR): Estado
+Ubicacion (VARCHAR): Ubicación
+ValorEstimado (DECIMAL): Valor
 
 
+### TABLA: PRESTAMO
+IdPrestamo (INT, PK): Identificador
+NombrePieza (VARCHAR): Nombre de la pieza
+InstitucionSolicitante (VARCHAR): Institución
+Responsable (VARCHAR): Responsable
+Contacto (VARCHAR): Contacto
+FechaPrestamo (DATE): Fecha préstamo
+FechaDevolucion (DATE): Fecha devolución
+Estado (VARCHAR): Estado
+Condiciones (VARCHAR): Condiciones
+
+
+### TABLA: PROVEEDOR
+IdProveedor (INT, PK): Identificador
+RazonSocial (VARCHAR): Nombre
+RNC (VARCHAR): Identificación
+Contacto (VARCHAR): Contacto
+Telefono (VARCHAR): Teléfono
+Email (VARCHAR): Correo
+Direccion (VARCHAR): Dirección
+Categoria (VARCHAR): Categoría
+Estado (VARCHAR): Estado
+FechaRegistro (DATE): Fecha
+
+
+### TABLA: REPORTE
+IdReporte (INT, PK): Identificador
+Titulo (VARCHAR): Título
+Tipo (VARCHAR): Tipo
+FechaGeneracion (DATE): Fecha
+GeneradoPor (VARCHAR): Usuario
+PeriodoDesde (DATE): Desde
+PeriodoHasta (DATE): Hasta
+Descripcion (VARCHAR): Descripción
+Estado (VARCHAR): Estado
 
 
 
-### TABLA: EXPOSICION
-Registro de exposiciones organizadas por el museo.
-
-| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
-|:--- |:--- |:---:|:---:|:--- |
-| **IdExposicion** | INT |   | PK | Identificador único de la exposición. |
-| **Nombre** | VARCHAR | 100 |   | Título de la muestra o evento. |
-| **Tipo** | VARCHAR | 50 |   | Naturaleza del evento (Temporal, Permanente, Itinerante). |
-| **FechaInicio** | DATE |   |   | Fecha de apertura al público. |
-| **FechaFin** | DATE |   |   | Fecha de clausura programada. |
-| **Sala** | VARCHAR | 100 |   | Sala, pabellón o área asignada dentro del museo. |
+### TABLA: RESERVA
+IdReserva (INT, PK): Identificador
+NombreVisitante (VARCHAR): Nombre del visitante
+CantidadPersonas (INT): Cantidad
+FechaReserva (DATE): Fecha
+Hora (DATE): Hora
+Tipo (VARCHAR): Tipo
+Estado (VARCHAR): Estado
+Observaciones (VARCHAR): Observaciones
 
 
-
-
-
-#### TABLA: VISITA
-Registro de los recorridos guiados, vinculando a los grupos de visitantes con el personal (guías) y las muestras culturales específicas.
-
-| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
-|:--- |:--- |:---:|:---:|:--- |
-| **IdVisita** | INT |   | PK | Identificador único del registro de visita. |
-| **Fecha** | DATE |   |   | Fecha en la que se realiza el recorrido. |
-| **CantidadPersonas** | INT |   |   | Número total de asistentes en el grupo. |
-| **IdGuia** | INT |   | FK | Referencia al empleado asignado como guía. |
-| **IdExposicion** | INT |   | FK | Referencia a la exposición que se está visitando. |
-
-
-
-
-
-
-#### TABLA: MOVIMIENTO_PIEZA
-DetallE de los traslados físicos de las piezas, permitiendo rastrear el origen, destino y tipo de movimiento (interno o externo).
-
-| Campo | Tipo de Dato | Tamaño | Clave | Descripción |
-|:--- |:--- |:---:|:---:|:--- |
-| **IdMovimiento** | INT |   | PK | Identificador único del registro de movimiento. |
-| **IdPieza** | INT |   | FK | Referencia a la pieza que ha sido trasladada. |
-| **FechaMovimiento** | DATE |   |   | Fecha exacta en la que se realizó el traslado. |
-| **TipoMovimiento** | VARCHAR | 50 |   | Naturaleza del traslado (Interno, Externo, Préstamo). |
-| **Origen** | VARCHAR | 100 |   | Ubicación inicial (Ej: Sala 1, Depósito A). |
-| **Destino** | VARCHAR | 100 |   | Nueva ubicación asignada a la pieza. |
-
+### TABLA: SALA
+IdSala (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Capacidad (INT): Capacidad
+Ubicacion (VARCHAR): Ubicación
+Tipo (VARCHAR): Tipo
+Estado (VARCHAR): Estado
+Descripcion (VARCHAR): Descripción
 
 
 ### TABLA: USUARIO
-Gestiona las credenciales y niveles de acceso al sistema del museo.
-
-
-| Campo | Tipo | Tamaño | Clave | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **IdUsuario** | INT |   | PK | Identificador único del registro de usuario (Autoincremental). |
-| **NombreUsuario** | VARCHAR | 50 |   | Alias o login único para el acceso al sistema. |
-| **Contrasena** | VARCHAR | 255 |   | Clave de acceso (validada en la Capa de Datos). |
-| **NombreCompleto** | VARCHAR | 200 |   | Nombre real del empleado o administrador. |
-| **Rol** | VARCHAR | 50 |   | Perfil de permisos (Ej: Administrador, Recepción, Guía). |
-| **Estado** | VARCHAR | 20 |   | Filtro de acceso (Solo usuarios 'Activo' pueden loguearse). |
+IdUsuario (INT, PK): Identificador
+NombreUsuario (VARCHAR): Usuario
+Contrasena (VARCHAR): Contraseña
+NombreCompleto (VARCHAR): Nombre completo
+Rol (VARCHAR): Rol
+Estado (VARCHAR): Estado
 
 
 
+### TABLA: VISITANTE
+IdVisitante (INT, PK): Identificador
+Nombre (VARCHAR): Nombre
+Apellido (VARCHAR): Apellido
+DocumentoIdentidad (VARCHAR): Documento
+Edad (INT): Edad
+Genero (VARCHAR): Género
+Nacionalidad (VARCHAR): Nacionalidad
+Email (VARCHAR): Correo
