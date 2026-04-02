@@ -2,7 +2,7 @@
 
 ## Contenido
 
-## Documentación del Proyecto (Etapas del Ciclo de Vida de un Sistema)
+#  Documentación del Proyecto (Etapas del Ciclo de Vida de un Sistema)
 #  Análisis de Sistemas  
   1. Estudio del Problema  
   2. Definición de Objetivos del Sistema  
@@ -14,23 +14,23 @@
      6.2 Requerimientos No Funcionales
   7. Diagrama de Casos de Uso  
   8. Diccionario de Datos  
-     TABLA: CONTRATO  
-     TABLA: DONACION  
-     TABLA: EMPLEADO
-     TABLA: ENTRADA
-     TABLA: EVENTO
-     TABLA: EXPOSICION
-     TABLA: GUIA
-     TABLA: INVENTARIO
-     TABLA: MANTENIMIENTO
-     TABLA: PIEZA
-     TABLA: PRESTAMO
-     TABLA: PROVEEDOR
-     TABLA: REPORTE
-     TABLA: RESERVA
-     TABLA: SALA  
-     TABLA: USUARIO  
-     TABLA: VISITANTE
+     -TABLA: CONTRATO  
+     -TABLA: DONACION  
+     -TABLA: EMPLEADO
+     -TABLA: ENTRADA
+     -TABLA: EVENTO
+     -TABLA: EXPOSICION
+     -TABLA: GUIA
+     -TABLA: INVENTARIO
+     -TABLA: MANTENIMIENTO
+     -TABLA: PIEZA
+     -TABLA: PRESTAMO
+     -TABLA: PROVEEDOR
+     -TABLA: REPORTE
+     -TABLA: RESERVA
+     -TABLA: SALA  
+     -TABLA: USUARIO  
+     -TABLA: VISITANTE
    
  # Análisis de Sistemas
 
