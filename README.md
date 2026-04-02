@@ -115,7 +115,8 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
   El recepcionista/guía programa o registra una visita grupal. Introduce la fecha de la visita, la cantidad de               asistentes, el guía asignado y la exposición correspondiente. El sistema guarda el registro y asocia al visitante          (o grupo) con la visita planeada.
 
 
-![Diagrama de Casos de Uso](Diagramacasosdeuso.jpg)
+
+
 
 
 
