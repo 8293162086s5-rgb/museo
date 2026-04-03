@@ -162,7 +162,7 @@ El empleado administra los eventos del museo, incluyendo fechas y detalles.
 El empleado registra los préstamos de piezas a otras instituciones.
 
   #### 19. Gestionar reservas  
-El empleado administra las reservas de visitas, incluyendo fecha, cantidad de personas y tip
+El empleado administra las reservas de visitas, incluyendo fecha, cantidad de visita y tipo
 
 
 ![Diagrama de casos de uso](Diagramadecasosdeuso.png)
