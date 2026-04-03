@@ -103,16 +103,66 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 ## 7. Diagrama de Casos de Uso
 
-  #### 1.	Iniciar sesión:
-  El usuario (administrador o recepcionista/guía) ingresa su nombre de usuario y contraseña. El sistema valida las           credenciales. Si son correctas, se accede a las funciones disponibles según el rol del usuario.
-  #### 2.	Gestionar Empleados y Guías: 
-  El administrador crea, edita o elimina registros de empleados y guías (datos personales, especialidad, turno,              etc.), asegurando que solo él pueda modificar esta información.
-  #### 3.	Gestionar Piezas:
-  El administrador registra nuevas piezas del museo o actualiza la información de piezas existentes (código de               inventario, descripción, autor, estado, etc.). Este caso permite mantener el inventario digital actualizado.
-  #### 4.	Registrar Movimiento de Piezas: 
-  El administrador ingresa cada traslado o cambio de ubicación de una pieza (fecha, origen, destino, motivo). El             sistema guarda estos datos para auditoría interna, facilitando el seguimiento del recorrido histórico de cada              pieza.
-  #### 5.	Registrar Visita Guiada: 
-  El recepcionista/guía programa o registra una visita grupal. Introduce la fecha de la visita, la cantidad de               asistentes, el guía asignado y la exposición correspondiente. El sistema guarda el registro y asocia al visitante          (o grupo) con la visita planeada.
+ ### 1. Iniciar sesión  
+El usuario (administrador o empleado) introduce su usuario y contraseña. El sistema verifica los datos y, si son correctos, permite entrar al sistema mostrando las opciones según el tipo de usuario.
+
+### 2. Cambiar sesión  
+El usuario puede cerrar su sesión actual para iniciar con otro usuario. El sistema lo lleva nuevamente a la pantalla de inicio de sesión.
+
+### 3. Salir del sistema  
+El usuario cierra completamente el sistema. La aplicación se detiene.
+
+### Funciones del Administrador
+
+### 4. Gestionar empleados  
+El administrador puede agregar, modificar o eliminar empleados. Se registran datos como nombre, cargo, teléfono y estado.
+
+### 5. Gestionar proveedores  
+El administrador puede registrar nuevos proveedores, editar su información o eliminarlos del sistema.
+
+### 6. Gestionar contratos  
+El administrador maneja los contratos, donde puede registrar información como fechas, tipo de contrato y monto.
+
+### 7. Gestionar mantenimiento  
+El administrador registra y controla las actividades de mantenimiento del museo, indicando tipo, área, responsable y estado.
+
+### 8. Gestionar inventario  
+El administrador administra el inventario del museo, donde puede registrar piezas con su código, categoría, ubicación y valor.
+
+### 9. Generar reportes  
+El administrador puede generar reportes para ver información del sistema como inventario, visitantes o mantenimiento.
+
+### Funciones del Empleado
+
+### 10. Gestionar guías  
+El empleado registra y actualiza la información de los guías, como nombre, idioma y contacto.
+
+### 11. Gestionar visitantes  
+El empleado puede registrar y consultar la información de los visitantes.
+
+### 12. Gestionar exposiciones  
+El empleado administra las exposiciones, incluyendo datos como nombre, fechas y sala.
+
+### 13. Gestionar piezas  
+El empleado registra y actualiza las piezas del museo.
+
+### 14. Gestionar salas  
+El empleado administra las salas del museo, como su capacidad y ubicación.
+
+### 15. Registrar donaciones  
+El empleado registra las donaciones hechas al museo, incluyendo información del donante.
+
+### 16. Registrar entradas  
+El empleado registra la venta de entradas, indicando tipo, cantidad y método de pago.
+
+### 17. Gestionar eventos  
+El empleado administra los eventos del museo, incluyendo fechas y detalles.
+
+### 18. Gestionar préstamos  
+El empleado registra los préstamos de piezas a otras instituciones.
+
+### 19. Gestionar reservas  
+El empleado administra las reservas de visitas, incluyendo fecha, cantidad de personas y tip
 
 
 ![Diagrama de casos de uso](Diagramadecasosdeuso.png)
