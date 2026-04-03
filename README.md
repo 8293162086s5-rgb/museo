@@ -103,7 +103,7 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 ## 7. Diagrama de Casos de Uso
 
- ### 1. Iniciar sesión  
+### 1. Iniciar sesión  
 El usuario (administrador o empleado) introduce su usuario y contraseña. El sistema verifica los datos y, si son correctos, permite entrar al sistema mostrando las opciones según el tipo de usuario.
 
 ### 2. Cambiar sesión  
