@@ -103,65 +103,65 @@ Toda la información se almacenará en una base de datos, lo que permitirá evit
 
 ## 7. Diagrama de Casos de Uso
 
-### 1. Iniciar sesión  
+  #### 1. Iniciar sesión  
 El usuario (administrador o empleado) introduce su usuario y contraseña. El sistema verifica los datos y, si son correctos, permite entrar al sistema mostrando las opciones según el tipo de usuario.
 
-### 2. Cambiar sesión  
+  #### 2. Cambiar sesión  
 El usuario puede cerrar su sesión actual para iniciar con otro usuario. El sistema lo lleva nuevamente a la pantalla de inicio de sesión.
 
-### 3. Salir del sistema  
+  #### 3. Salir del sistema  
 El usuario cierra completamente el sistema. La aplicación se detiene.
 
 ### Funciones del Administrador
 
-### 4. Gestionar empleados  
+  #### 4. Gestionar empleados  
 El administrador puede agregar, modificar o eliminar empleados. Se registran datos como nombre, cargo, teléfono y estado.
 
-### 5. Gestionar proveedores  
+  #### 5. Gestionar proveedores  
 El administrador puede registrar nuevos proveedores, editar su información o eliminarlos del sistema.
 
-### 6. Gestionar contratos  
+  #### 6. Gestionar contratos  
 El administrador maneja los contratos, donde puede registrar información como fechas, tipo de contrato y monto.
 
-### 7. Gestionar mantenimiento  
+  #### 7. Gestionar mantenimiento  
 El administrador registra y controla las actividades de mantenimiento del museo, indicando tipo, área, responsable y estado.
 
-### 8. Gestionar inventario  
+  #### 8. Gestionar inventario  
 El administrador administra el inventario del museo, donde puede registrar piezas con su código, categoría, ubicación y valor.
 
-### 9. Generar reportes  
+  #### 9. Generar reportes  
 El administrador puede generar reportes para ver información del sistema como inventario, visitantes o mantenimiento.
 
 ### Funciones del Empleado
 
-### 10. Gestionar guías  
+  #### 10. Gestionar guías  
 El empleado registra y actualiza la información de los guías, como nombre, idioma y contacto.
 
-### 11. Gestionar visitantes  
+  #### 11. Gestionar visitantes  
 El empleado puede registrar y consultar la información de los visitantes.
 
-### 12. Gestionar exposiciones  
+  #### 12. Gestionar exposiciones  
 El empleado administra las exposiciones, incluyendo datos como nombre, fechas y sala.
 
-### 13. Gestionar piezas  
+  #### 13. Gestionar piezas  
 El empleado registra y actualiza las piezas del museo.
 
-### 14. Gestionar salas  
+  #### 14. Gestionar salas  
 El empleado administra las salas del museo, como su capacidad y ubicación.
 
-### 15. Registrar donaciones  
+  #### 15. Registrar donaciones  
 El empleado registra las donaciones hechas al museo, incluyendo información del donante.
 
-### 16. Registrar entradas  
+  #### 16. Registrar entradas  
 El empleado registra la venta de entradas, indicando tipo, cantidad y método de pago.
 
-### 17. Gestionar eventos  
+  #### 17. Gestionar eventos  
 El empleado administra los eventos del museo, incluyendo fechas y detalles.
 
-### 18. Gestionar préstamos  
+  #### 18. Gestionar préstamos  
 El empleado registra los préstamos de piezas a otras instituciones.
 
-### 19. Gestionar reservas  
+  #### 19. Gestionar reservas  
 El empleado administra las reservas de visitas, incluyendo fecha, cantidad de personas y tip
 
 
