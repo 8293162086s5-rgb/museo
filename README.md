@@ -388,9 +388,16 @@ Aquí se pueden ver las clases principales del sistema, junto con sus métodos y
 Este diagrama ayuda a entender cómo funciona el sistema y cómo están conectadas sus diferentes partes.
 
 
+
+![Diagrama de Clases](img/DIAGRAMAUMLCLASES.png)
+
+
 ### 9.2 Diagrama de Actividades
 
 El diagrama de actividades muestra el flujo de procesos del sistema.
+
+
+![Diagrama de Actividades](img/DIAGRAMAUMLACTIVIDADES.png)
 
 Permite ver paso a paso cómo se realiza una operación, en este caso la reserva de un evento y la generación de una entrada.
 
@@ -400,6 +407,9 @@ También incluye decisiones que muestran los diferentes caminos que puede tomar 
 ### 9.3 Diagrama de Secuencia
 
 El diagrama de secuencia muestra cómo interactúan los diferentes componentes del sistema paso a paso.
+
+
+![Diagrama de Secuencia](img/DIAGRAMAUMLSECUENCIA.png)
 
 En este caso se observa cómo el usuario interactúa con la interfaz, la lógica de negocio, el acceso a datos y la base de datos para realizar una reserva y generar una entrada.
 
@@ -433,6 +443,9 @@ Las principales entidades del sistema son:
 
 Usuario, Empleado, Visitante, Guía, Sala, Evento, Exposición, Entrada, Reserva, Pieza, Inventario, Préstamo y Donación.
 
+
+![Diagrama MER](img/DIAGRAMAMER.png)
+
 Relaciones principales:
 
 - Un visitante puede tener varias entradas y reservas  
@@ -448,6 +461,9 @@ Este modelo ayuda a entender cómo se conecta toda la información dentro del si
 ### Diagrama Entidad-Relación (DER)
 
 El DER representa la base de datos de forma más detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
+
+
+![Diagrama DER](img/DIAGRAMADER.png)
 
 
 ### Tablas principales
