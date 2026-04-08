@@ -598,21 +598,21 @@ A través de estos formularios se pueden realizar operaciones como registrar, ed
 
 Esta pantalla permite al usuario ingresar al sistema mediante su nombre de usuario y contraseña, seleccionando el tipo de acceso (Administrador o Empleado).
 
-![Pantalla de Inicio](img/pantalladeinicio.jpeg)
+![Pantalla de Inicio](img/pantalladeinicio.jpg)
 
 
 ### Menú Principal del Sistema
 
 En esta pantalla se muestran todos los módulos disponibles del sistema, organizados según el tipo de usuario. Desde aquí se puede acceder a todas las funcionalidades.
 
-![Menú Principal](img/menuprincipal.jpeg)
+![Menú Principal](img/menuprincipal.jpg)
 
 
 ### Gestión de Empleados
 
 Este módulo permite registrar, modificar y eliminar la información de los empleados del museo.
 
-![Empleados](img/empleados.jpeg)
+![Empleados](img/empleados.jpg)
 
 
 ### Gestión de Guías
@@ -668,7 +668,7 @@ Este módulo permite gestionar eventos, incluyendo fechas, responsables y capaci
 
 Permite registrar reservas de visitantes, indicando fecha, cantidad de personas y tipo de visita.
 
-![Reservas](img/reservas.jpeg)
+![Reservas](img/reservas.jpg)
 
 
 ### Venta y Control de Entradas
