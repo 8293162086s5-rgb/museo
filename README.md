@@ -376,51 +376,64 @@ Email (VARCHAR): Correo
 
 # Fase II: Diseño de Sistemas II
 
-## 9. Diagramas UML
-
-En esta sección se presentan los diagramas UML del sistema, los cuales permiten comprender su estructura, funcionamiento y comportamiento antes de la implementación.
+## 9 Diagramas UML
+En esta sección se presentan los diagramas UML del sistema, los cuales ayudan a entender su estructura, funcionamiento y comportamiento antes de su implementación.
 
 ### 9.1 Diagrama de Clases
 
-El diagrama de clases representa la estructura del sistema desde el punto de vista de la programación orientada a objetos.
+El diagrama de clases muestra cómo está organizado el sistema, incluyendo sus clases, atributos y relaciones.
 
-En este diagrama se muestran las clases principales del sistema, sus atributos, métodos y las relaciones entre ellas.
+Aquí se pueden ver las clases principales del sistema, junto con sus métodos y la forma en que se relacionan entre sí.
 
-Este diagrama permite entender cómo se organizará el código del sistema y cómo interactúan sus componentes.
+Este diagrama ayuda a entender cómo funciona el sistema y cómo están conectadas sus diferentes partes.
+
 
 ### 9.2 Diagrama de Actividades
 
-El diagrama de actividades representa el flujo de procesos del sistema.
+El diagrama de actividades muestra el flujo de procesos del sistema.
 
-Muestra paso a paso cómo se realiza una operación, en este caso la reserva de un evento y la generación de una entrada.
+Permite ver paso a paso cómo se realiza una operación, en este caso la reserva de un evento y la generación de una entrada.
 
-Incluye decisiones que permiten visualizar diferentes caminos dependiendo de las condiciones del sistema.
+También incluye decisiones que muestran los diferentes caminos que puede tomar el sistema dependiendo de cada situación.
+
 
 ### 9.3 Diagrama de Secuencia
 
-El diagrama de secuencia muestra la interacción entre los diferentes componentes del sistema en el tiempo.
+El diagrama de secuencia muestra cómo interactúan los diferentes componentes del sistema paso a paso.
 
-En este caso se representa cómo el usuario interactúa con la interfaz, la lógica de negocio, el acceso a datos y la base de datos para realizar una reserva y generar una entrada.
+En este caso se observa cómo el usuario interactúa con la interfaz, la lógica de negocio, el acceso a datos y la base de datos para realizar una reserva y generar una entrada.
 
-Además, se evidencia el uso de una arquitectura en capas que organiza el sistema de forma estructurada.
+También se puede ver que el sistema está organizado en capas.
 
----
 
-## 10. Diseño de Base de Datos (MER y DER)
+### Conclusión de los Diagramas UML 
+
+Los diagramas UML permiten ver el sistema desde diferentes puntos de vista.
+
+- El diagrama de clases muestra la estructura del sistema  
+- El diagrama de actividades muestra el flujo de los procesos  
+- El diagrama de secuencia muestra cómo interactúan los componentes  
+
+En conjunto, estos diagramas ayudan a entender mejor cómo funciona el sistema antes de desarrollarlo.
+
+
+
+## 10 Diseño de Base de Datos (MER y DER)
 
 ### Descripción del Diseño
 
-La base de datos fue diseñada para organizar la información del sistema de forma clara, utilizando tablas relacionadas mediante claves primarias y foráneas.
+La base de datos se diseñó para organizar la información del sistema de manera ordenada.
+
 
 ### Modelo Entidad-Relación (MER)
 
-El modelo entidad-relación muestra de manera general cómo está organizado el sistema.
+El modelo entidad-relación muestra de forma general cómo está organizado el sistema.
 
 Las principales entidades del sistema son:
 
 Usuario, Empleado, Visitante, Guía, Sala, Evento, Exposición, Entrada, Reserva, Pieza, Inventario, Préstamo y Donación.
 
-#### Relaciones principales
+Relaciones principales:
 
 - Un visitante puede tener varias entradas y reservas  
 - Una reserva pertenece a un evento  
@@ -429,9 +442,30 @@ Usuario, Empleado, Visitante, Guía, Sala, Evento, Exposición, Entrada, Reserva
 - Un evento está relacionado con un empleado y un guía  
 - Una pieza puede estar en inventario, ser prestada o donada  
 
+Este modelo ayuda a entender cómo se conecta toda la información dentro del sistema.
+
+
 ### Diagrama Entidad-Relación (DER)
 
-El DER representa la base de datos de forma detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
+El DER representa la base de datos de forma más detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
+
+
+### Tablas principales
+
+- Usuario: IdUsuario como clave primaria  
+- Empleado: IdEmpleado como clave primaria y IdUsuario como clave foránea  
+- Visitante: IdVisitante como clave primaria  
+- Evento: IdEvento como clave primaria, con IdSala, IdEmpleado e IdGuia como claves foráneas  
+- Exposición: IdExposicion como clave primaria y IdSala como clave foránea  
+- Entrada: IdEntrada como clave primaria, con IdVisitante e IdExposicion como claves foráneas  
+- Reserva: IdReserva como clave primaria, con IdVisitante e IdEvento como claves foráneas  
+- Pieza: IdPieza como clave primaria  
+- Inventario: IdInventario como clave primaria y IdPieza como clave foránea  
+- Préstamo: IdPrestamo como clave primaria y IdPieza como clave foránea  
+- Donación: IdDonacion como clave primaria y IdPieza como clave foránea  
+
+Permite ver cómo se organizan los datos en la base de datos y cómo se relacionan entre sí.
+
 
 ### Estructura de la Base de Datos
 
@@ -451,133 +485,579 @@ El DER representa la base de datos de forma detallada, mostrando las tablas, sus
 - Préstamo  
 - Donación  
 
+
 #### Relaciones
 
 - USUARIO → EMPLEADO (1:1)  
+
 - VISITANTE → ENTRADA (1:N)  
 - VISITANTE → RESERVA (1:N)  
+
 - RESERVA → EVENTO (N:1)  
+
 - EVENTO → SALA (N:1)  
 - EXPOSICIÓN → SALA (N:1)  
 - EVENTO → EMPLEADO (N:1)  
 - EVENTO → GUÍA (N:1)  
+
 - PIEZA → INVENTARIO (1:1)  
+
 - PIEZA → PRÉSTAMO (1:N)  
 - PIEZA → DONACIÓN (1:N)  
+
 - ENTRADA → EXPOSICIÓN (N:1)  
 
----
 
-## 11. Prototipos de la Interfaz Gráfica
+### Tablas y Claves
+
+#### Usuario
+- IdUsuario (PK)
+
+#### Empleado
+- IdEmpleado (PK)  
+- IdUsuario (FK)
+
+#### Visitante
+- IdVisitante (PK)
+
+#### Guía
+- IdGuia (PK)
+
+#### Sala
+- IdSala (PK)
+
+#### Evento
+- IdEvento (PK)  
+- IdSala (FK)  
+- IdEmpleado (FK)  
+- IdGuia (FK)
+
+#### Exposición
+- IdExposicion (PK)  
+- IdSala (FK)
+
+#### Entrada
+- IdEntrada (PK)  
+- IdVisitante (FK)  
+- IdExposicion (FK)
+
+#### Reserva
+- IdReserva (PK)  
+- IdVisitante (FK)  
+- IdEvento (FK)
+
+#### Pieza
+- IdPieza (PK)
+
+#### Inventario
+- IdInventario (PK)  
+- IdPieza (FK)
+
+#### Préstamo
+- IdPrestamo (PK)  
+- IdPieza (FK)
+
+#### Donación
+- IdDonacion (PK)  
+- IdPieza (FK)
+
+
+### Conclusión
+
+El diseño permite manejar la información de forma organizada y mantener la relación entre los datos del sistema.
+
+
+
+
+## 11 Prototipos de la Interfaz Gráfica
 
 ### Descripción
 
-Los prototipos muestran las pantallas del sistema y cómo el usuario interactúa con ellas.
+Los prototipos muestran las pantallas del sistema y cómo el usuario las utiliza.
+
+A través de estos formularios se pueden realizar operaciones como registrar, editar, consultar y eliminar información dentro del sistema.
+
 
 ### Pantalla de Inicio de Sesión
 
-Permite al usuario ingresar al sistema mediante usuario y contraseña.
+Esta pantalla permite al usuario ingresar al sistema mediante su nombre de usuario y contraseña, seleccionando el tipo de acceso (Administrador o Empleado).
+
+![Pantalla de Inicio de Sesión](ruta-imagen-login.png)
+
 
 ### Menú Principal del Sistema
 
-Muestra todos los módulos disponibles según el tipo de usuario.
+En esta pantalla se muestran todos los módulos disponibles del sistema, organizados según el tipo de usuario. Desde aquí se puede acceder a todas las funcionalidades.
 
-### Módulos del Sistema
+![Menú Principal](ruta-imagen-menu.png)
 
-- Gestión de Empleados  
-- Gestión de Guías  
-- Gestión de Visitantes  
-- Gestión de Piezas  
-- Control de Inventario  
-- Gestión de Salas  
-- Gestión de Exposiciones  
-- Gestión de Eventos  
-- Gestión de Reservas  
-- Venta de Entradas  
-- Registro de Donaciones  
-- Préstamos de Piezas  
 
----
+### Gestión de Empleados
 
-## 12. Plan de Pruebas Funcionales
+Este módulo permite registrar, modificar y eliminar la información de los empleados del museo.
+
+![Gestión de Empleados](ruta-imagen-empleados.png)
+
+
+### Gestión de Guías
+
+Permite administrar los datos de los guías, incluyendo su información personal y estado dentro del sistema.
+
+![Gestión de Guías](ruta-imagen-guias.png)
+
+
+### Gestión de Visitantes
+
+En este módulo se registran los visitantes del museo con sus datos personales.
+
+![Gestión de Visitantes](ruta-imagen-visitantes.png)
+
+
+### Gestión de Piezas
+
+Permite gestionar las piezas del museo, incluyendo su descripción, material, estado y valor.
+
+![Gestión de Piezas](ruta-imagen-piezas.png)
+
+
+### Control de Inventario
+
+Se encarga de llevar el control de los objetos registrados, su ubicación y estado dentro del museo.
+
+![Control de Inventario](ruta-imagen-inventario.png)
+
+
+### Gestión de Salas
+
+Permite administrar las salas del museo, su capacidad, ubicación y estado.
+
+![Gestión de Salas](ruta-imagen-salas.png)
+
+
+### Gestión de Exposiciones
+
+Permite registrar y organizar las exposiciones del museo, indicando fechas y salas asignadas.
+
+![Gestión de Exposiciones](ruta-imagen-exposiciones.png)
+
+
+### Gestión de Eventos Especiales
+
+Este módulo permite gestionar eventos, incluyendo fechas, responsables y capacidad.
+
+![Gestión de Eventos](ruta-imagen-eventos.png)
+
+
+### Gestión de Reservas
+
+Permite registrar reservas de visitantes, indicando fecha, cantidad de personas y tipo de visita.
+
+![Gestión de Reservas](ruta-imagen-reservas.png)
+
+
+### Venta y Control de Entradas
+
+Permite registrar la venta de entradas, incluyendo tipo, cantidad, precio y método de pago.
+
+![Venta de Entradas](ruta-imagen-entradas.png)
+
+
+### Registro de Donaciones
+
+Permite registrar donaciones realizadas al museo, incluyendo información del donante y tipo de donación.
+
+![Registro de Donaciones](ruta-imagen-donaciones.png)
+
+
+### Préstamos de Piezas
+
+Permite gestionar el préstamo de piezas a otras instituciones, incluyendo fechas y condiciones.
+
+![Préstamos de Piezas](ruta-imagen-prestamos.png)
+
+
+
+
+## 12 Plan de Pruebas Funcionales
 
 ### Descripción
 
-Se utiliza para verificar que cada módulo funcione correctamente.
+Este plan de pruebas se usa para comprobar que cada parte del sistema funcione correctamente.
+
+A través de estas pruebas se revisa que las opciones como registrar, editar, eliminar y consultar información trabajen bien en cada módulo.
+
 
 ### Objetivo
 
-Validar que el sistema cumpla con los requerimientos establecidos.
+Verificar que el sistema funcione correctamente y que los datos se manejen bien en todos los módulos.
 
-### Casos de Prueba
+
+### Módulos evaluados
 
 - Inicio de sesión  
 - Gestión de empleados  
+- Gestión de guías  
 - Gestión de visitantes  
 - Gestión de piezas  
-- Inventario  
-- Reservas  
-- Entradas  
+- Control de inventario  
+- Gestión de salas  
+- Gestión de exposiciones  
+- Gestión de eventos  
+- Gestión de reservas  
+- Venta de entradas  
+- Registro de donaciones  
+- Préstamos de piezas  
 
----
 
-## 13. Manual Técnico
+### Casos de Prueba
+
+
+#### Inicio de Sesión
+
+- Caso 1: Ingreso correcto  
+  Se escriben datos válidos y el sistema permite entrar.
+
+- Caso 2: Ingreso incorrecto  
+  Se ingresan datos incorrectos y el sistema muestra un error.
+
+- Caso 3: Campos vacíos  
+  No se llenan los campos y el sistema pide completar la información.
+
+
+#### Gestión de Empleados
+
+- Caso 1: Agregar empleado  
+  Se llena el formulario y el sistema guarda la información.
+
+- Caso 2: Modificar datos  
+  Se cambian los datos y el sistema los actualiza.
+
+- Caso 3: Eliminar registro  
+  Se elimina un empleado y desaparece de la lista.
+
+
+#### Gestión de Guías
+
+- Caso 1: Agregar guía  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar información  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar guía  
+  Se borra el registro y se elimina del sistema.
+
+
+#### Gestión de Visitantes
+
+- Caso 1: Registrar visitante  
+  Se llena el formulario y se guarda correctamente.
+
+- Caso 2: Editar visitante  
+  Se cambian los datos y se actualizan.
+
+- Caso 3: Eliminar visitante  
+  Se elimina el registro correctamente.
+
+
+#### Gestión de Piezas
+
+- Caso 1: Registrar pieza  
+  Se ingresa la información y se guarda correctamente.
+
+- Caso 2: Editar pieza  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar pieza  
+  Se elimina el registro correctamente.
+
+
+#### Control de Inventario
+
+- Caso 1: Agregar al inventario  
+  Se registra un objeto y se guarda correctamente.
+
+- Caso 2: Modificar registro  
+  Se cambian los datos y se actualizan.
+
+- Caso 3: Eliminar registro  
+  Se elimina el objeto del sistema.
+
+
+#### Gestión de Salas
+
+- Caso 1: Registrar sala  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar sala  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar sala  
+  Se elimina el registro correctamente.
+
+
+#### Gestión de Exposiciones
+
+- Caso 1: Crear exposición  
+  Se llenan los datos y se guarda correctamente.
+
+- Caso 2: Editar exposición  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar exposición  
+  Se elimina correctamente.
+
+
+#### Gestión de Eventos
+
+- Caso 1: Crear evento  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar evento  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar evento  
+  Se elimina correctamente.
+
+
+#### Gestión de Reservas
+
+- Caso 1: Registrar reserva  
+  Se llenan los datos y se guarda correctamente.
+
+- Caso 2: Editar reserva  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar reserva  
+  Se elimina correctamente.
+
+
+#### Venta de Entradas
+
+- Caso 1: Registrar venta  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar venta  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Anular venta  
+  Se cancela correctamente.
+
+
+#### Registro de Donaciones
+
+- Caso 1: Registrar donación  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar donación  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar donación  
+  Se elimina correctamente.
+
+
+#### Préstamos de Piezas
+
+- Caso 1: Registrar préstamo  
+  Se ingresan los datos y se guarda correctamente.
+
+- Caso 2: Editar préstamo  
+  Se modifican los datos y se actualizan.
+
+- Caso 3: Eliminar préstamo  
+  Se elimina correctamente.
+
+
+
+  ## 13 Manual Técnico
 
 ### Introducción
 
-Describe la estructura interna del sistema y su funcionamiento.
+Este manual técnico explica cómo está construido el sistema y cómo funciona, incluyendo sus componentes, organización y manejo de datos.
+
+Está dirigido a personas con conocimientos básicos de programación.
+
+
+### Objetivo
+
+Explicar cómo está construido el sistema, mostrando sus módulos, clases y relaciones, para facilitar su comprensión y mantenimiento.
+
 
 ### Arquitectura del Sistema
 
-El sistema está basado en programación orientada a objetos y arquitectura en capas.
+El sistema está desarrollado utilizando programación orientada a objetos, donde cada entidad se representa mediante una clase.
+
+El diseño se basa en:
+
+- Clases que representan las entidades  
+- Propiedades que representan los atributos  
+- Identificadores únicos (PK)  
+- Relaciones entre entidades mediante claves foráneas (FK)  
+
 
 ### Módulos del Sistema
 
-- Usuarios  
-- Visitantes  
-- Empleados  
-- Guías  
-- Salas  
-- Exposiciones  
-- Eventos  
-- Entradas  
-- Reservas  
-- Piezas  
+El sistema se divide en los siguientes módulos:
+
+- Gestión de Usuarios  
+- Gestión de Visitantes  
+- Gestión de Empleados  
+- Gestión de Guías  
+- Gestión de Salas  
+- Gestión de Exposiciones  
+- Gestión de Eventos  
+- Gestión de Entradas  
+- Gestión de Reservas  
+- Gestión de Piezas  
+- Gestión de Inventario  
+- Gestión de Préstamos  
+- Gestión de Donaciones  
+
+Cada módulo corresponde a una clase dentro del sistema.
+
+
+### Clases del Sistema
+
+Las principales clases utilizadas son:
+
+- Usuario  
+- Visitante  
+- Empleado  
+- Guía  
+- Sala  
+- Exposición  
+- Evento  
+- Entrada  
+- Reserva  
+- Pieza  
 - Inventario  
-- Préstamos  
-- Donaciones  
+- Préstamo  
+- Donación  
+
+
+### Relaciones entre Clases
+
+Las relaciones se establecen mediante claves foráneas (FK), lo que permite conectar las entidades del sistema.
+
+Relaciones principales:
+
+- Visitante → Entrada  
+- Visitante → Reserva  
+- Entrada → Exposición  
+- Reserva → Evento  
+- Evento → Sala  
+- Evento → Empleado  
+- Evento → Guía  
+- Exposición → Sala  
+- Pieza → Inventario  
+- Pieza → Préstamo  
+- Pieza → Donación  
+- Usuario → Empleado  
+
+Estas relaciones ayudan a evitar datos duplicados y mantener el sistema organizado.
+
 
 ### Base de Datos
 
-- Uso de claves primarias (PK)  
-- Uso de claves foráneas (FK)  
-- Integridad de datos  
-- Eliminación de duplicidad  
+El sistema utiliza identificadores únicos (ID) para cada entidad.
 
----
+Características:
 
-## 14. Manual de Usuario 
+- Cada entidad tiene una clave primaria (PK)  
+- Las relaciones se manejan con claves foráneas (FK)  
+- Se evita la duplicación de información  
+- Se mantiene la integridad de los datos  
+
+
+### Funcionamiento General
+
+El sistema se usa para:
+
+- Registrar información en los módulos  
+- Guardar los datos de forma organizada  
+- Relacionar la información entre entidades  
+- Consultar los datos registrados  
+
+
+### Consideraciones Técnicas
+
+- Se utilizan identificadores únicos para cada registro  
+- Se evita repetir información en diferentes entidades  
+- Las relaciones permiten conectar correctamente los datos  
+
+El sistema está diseñado de forma simple para facilitar su uso.
+
+
+### Conclusión
+
+El sistema está organizado utilizando clases y relaciones básicas, lo que permite manejar la información del museo de forma clara y coherente.
+
+
+
+## 14 Manual de Usuario
 
 ### Introducción
 
-Permite al usuario gestionar la información del sistema de manera sencilla.
+El sistema de gestión de museo permite registrar y administrar información relacionada con visitantes, empleados, guías, salas, exposiciones, eventos, piezas, inventario, préstamos, donaciones, proveedores, contratos, mantenimiento y reportes.
 
-### Módulos
+Esto ayuda a llevar un mejor control y organización de los datos del museo.
 
-- Usuarios  
-- Visitantes  
-- Empleados  
-- Guías  
-- Salas  
-- Exposiciones  
-- Eventos  
-- Entradas  
-- Reservas  
-- Piezas  
-- Inventario  
-- Préstamos  
-- Donaciones  
+
+### Objetivo
+
+Permitir al usuario realizar operaciones básicas como registrar, consultar y manejar la información del sistema de forma sencilla.
+
+
+### Módulos del Sistema
+
+El sistema cuenta con los siguientes módulos:
+
+- Usuarios: Permite gestionar los accesos al sistema, incluyendo registro de usuarios, roles y estado.  
+
+- Visitantes: Permite registrar y consultar información de los visitantes del museo.  
+
+- Empleados: Maneja la información del personal del museo.  
+
+- Guías: Permite registrar los guías disponibles y sus datos.  
+
+- Salas: Administra las salas donde se realizan exposiciones y eventos.  
+
+- Exposiciones: Permite registrar exposiciones y asignarlas a una sala.  
+
+- Eventos: Gestiona los eventos, asignando empleados, guías y salas.  
+
+- Entradas: Permite registrar la compra de entradas vinculadas a una exposición.  
+
+- Reservas: Permite registrar reservas de visitantes para eventos.  
+
+- Piezas: Administra las piezas del museo.  
+
+- Inventario: Controla la ubicación y estado de las piezas.  
+
+- Préstamos: Gestiona préstamos de piezas a otras instituciones.  
+
+- Donaciones: Registra donaciones realizadas por visitantes.  
+
+- Proveedores: Permite gestionar los proveedores del sistema.  
+
+- Contratos: Permite registrar y administrar contratos asociados a proveedores.  
+
+- Mantenimiento: Permite registrar y controlar las actividades de mantenimiento del museo.  
+
+- Reportes: Permite generar reportes del sistema para consulta y análisis.  
+
 
 ### Salir del Sistema
 
-El sistema permite cerrar la aplicación de forma segura desde el menú principal.
+El sistema incluye una opción para cerrar la aplicación de forma segura.
+
+Para salir del sistema:
+
+- Ubicar el botón “Salir” o “Cerrar” en el menú principal  
+- Hacer clic en esa opción  
+- El sistema se cerrará correctamente  
+
+
+### Nota
+
+El sistema permite gestionar de forma completa la información del museo, facilitando el registro, control y consulta de los datos de manera clara y organizada.
