@@ -598,98 +598,98 @@ A través de estos formularios se pueden realizar operaciones como registrar, ed
 
 Esta pantalla permite al usuario ingresar al sistema mediante su nombre de usuario y contraseña, seleccionando el tipo de acceso (Administrador o Empleado).
 
-![Pantalla de Inicio de Sesión](ruta-imagen-login.png)
+![Pantalla de Inicio](img/pantalladeinicio.jpeg)
 
 
 ### Menú Principal del Sistema
 
 En esta pantalla se muestran todos los módulos disponibles del sistema, organizados según el tipo de usuario. Desde aquí se puede acceder a todas las funcionalidades.
 
-![Menú Principal](ruta-imagen-menu.png)
+![Menú Principal](img/menuprincipal.jpeg)
 
 
 ### Gestión de Empleados
 
 Este módulo permite registrar, modificar y eliminar la información de los empleados del museo.
 
-![Gestión de Empleados](ruta-imagen-empleados.png)
+![Empleados](img/empleados.jpeg)
 
 
 ### Gestión de Guías
 
 Permite administrar los datos de los guías, incluyendo su información personal y estado dentro del sistema.
 
-![Gestión de Guías](ruta-imagen-guias.png)
+![Guías](img/guias.jpeg)
 
 
 ### Gestión de Visitantes
 
 En este módulo se registran los visitantes del museo con sus datos personales.
 
-![Gestión de Visitantes](ruta-imagen-visitantes.png)
+![Visitantes](img/visitantes.jpeg)
 
 
 ### Gestión de Piezas
 
 Permite gestionar las piezas del museo, incluyendo su descripción, material, estado y valor.
 
-![Gestión de Piezas](ruta-imagen-piezas.png)
+![Piezas](img/piezas.jpeg)
 
 
 ### Control de Inventario
 
 Se encarga de llevar el control de los objetos registrados, su ubicación y estado dentro del museo.
 
-![Control de Inventario](ruta-imagen-inventario.png)
+![Inventario](img/inventario.jpeg)
 
 
 ### Gestión de Salas
 
 Permite administrar las salas del museo, su capacidad, ubicación y estado.
 
-![Gestión de Salas](ruta-imagen-salas.png)
+![Salas](img/salas.jpeg)
 
 
 ### Gestión de Exposiciones
 
 Permite registrar y organizar las exposiciones del museo, indicando fechas y salas asignadas.
 
-![Gestión de Exposiciones](ruta-imagen-exposiciones.png)
+![Exposiciones](img/exposiciones.jpeg)
 
 
 ### Gestión de Eventos Especiales
 
 Este módulo permite gestionar eventos, incluyendo fechas, responsables y capacidad.
 
-![Gestión de Eventos](ruta-imagen-eventos.png)
+![Eventos](img/eventos.jpeg)
 
 
 ### Gestión de Reservas
 
 Permite registrar reservas de visitantes, indicando fecha, cantidad de personas y tipo de visita.
 
-![Gestión de Reservas](ruta-imagen-reservas.png)
+![Reservas](img/reservas.jpeg)
 
 
 ### Venta y Control de Entradas
 
 Permite registrar la venta de entradas, incluyendo tipo, cantidad, precio y método de pago.
 
-![Venta de Entradas](ruta-imagen-entradas.png)
+![Entradas](img/entradas.jpeg)
 
 
 ### Registro de Donaciones
 
 Permite registrar donaciones realizadas al museo, incluyendo información del donante y tipo de donación.
 
-![Registro de Donaciones](ruta-imagen-donaciones.png)
+![Donaciones](img/donaciones.jpeg)
 
 
 ### Préstamos de Piezas
 
 Permite gestionar el préstamo de piezas a otras instituciones, incluyendo fechas y condiciones.
 
-![Préstamos de Piezas](ruta-imagen-prestamos.png)
+![Préstamos](img/prestamos.jpeg)
 
 
 
