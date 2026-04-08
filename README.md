@@ -1,38 +1,35 @@
 # Sistema de Gestión de Museo
 
-## Contenido
 
-##  Documentación del Proyecto (Etapas del Ciclo de Vida de un Sistema)
-#  Análisis de Sistemas  
-##  1. Estudio del Problema  
-##  2. Definición de Objetivos del Sistema  
-##  3. Recolección de Información  
-##  4. Modelo del Sistema Actual (AS-IS)  
-##  5. Modelo del Sistema Propuesto (TO-BE)  
-##  6. Requerimientos Funcionales y No Funcionales  
-###     6.1 Requerimientos Funcionales  
-###     6.2 Requerimientos No Funcionales
-##  7. Diagrama de Casos de Uso  
-##  8. Diccionario de Datos  
-     TABLA: CONTRATO  
-     TABLA: DONACION  
-     TABLA: EMPLEADO
-     TABLA: ENTRADA
-     TABLA: EVENTO
-     TABLA: EXPOSICION
-     TABLA: GUIA
-     TABLA: INVENTARIO
-     TABLA: MANTENIMIENTO
-     TABLA: PIEZA
-     TABLA: PRESTAMO
-     TABLA: PROVEEDOR
-     TABLA: REPORTE
-     TABLA: RESERVA
-     TABLA: SALA  
-     TABLA: USUARIO  
-     TABLA: VISITANTE
+## Documentación del Proyecto (Etapas del Ciclo de Vida de un Sistema)
+
+## Índice
+
+- Fase I: Análisis de Sistemas I
+  - 1 Estudio del Problema
+  - 2 Definición de Objetivos del Sistema
+  - 3 Recolección de Información
+  - 4 Modelo del Sistema Actual (AS-IS)
+  - 5 Modelo del Sistema Propuesto (TO-BE)
+  - 6 Requerimientos Funcionales y No Funcionales
+    - 6.1 Requerimientos Funcionales
+    - 6.2 Requerimientos No Funcionales
+  - 7 Diagrama de Casos de Uso
+  - 8 Diccionario de Datos
+
+- Fase II: Diseño de Sistemas II
+  - 9 Diagramas UML
+    - 9.1 Diagrama de Clases
+    - 9.2 Diagrama de Actividades
+    - 9.3 Diagrama de Secuencia
+  - 10 Diseño de Base de Datos (MER y DER)
+  - 11 Prototipos de la Interfaz Gráfica
+  - 12 Plan de Pruebas Funcionales
+  - 13 Manual Técnico
+  - 14 Manual de Usuario
    
  # Análisis de Sistemas
+ 
 
  ## 1. Estudio del Problema
 Estudio del Problema Los museos pequeños y medianos suelen enfrentar procesos manuales desorganizados para gestionar sus colecciones y visitantes. En la institución estudiada (no especificado por tratarse de un caso académico) los registros de piezas, exposiciones y visitas se llevan en papel o en múltiples hojas de cálculo dispersas, sin un sistema unificado. Esto genera duplicación de datos, errores humanos y dificultades para acceder a información histórica rápidamente. Por ejemplo, se ha documentado que reportes de inventario pueden tardar días en prepararse debido a la consolidación manual de datos. La falta de digitalización también limita el análisis estadístico de la afluencia de visitantes y el mantenimiento predictivo de piezas.
@@ -374,3 +371,213 @@ Edad (INT): Edad
 Genero (VARCHAR): Género
 Nacionalidad (VARCHAR): Nacionalidad
 Email (VARCHAR): Correo
+
+
+
+# Fase II: Diseño de Sistemas II
+
+## 9. Diagramas UML
+
+En esta sección se presentan los diagramas UML del sistema, los cuales permiten comprender su estructura, funcionamiento y comportamiento antes de la implementación.
+
+### 9.1 Diagrama de Clases
+
+El diagrama de clases representa la estructura del sistema desde el punto de vista de la programación orientada a objetos.
+
+En este diagrama se muestran las clases principales del sistema, sus atributos, métodos y las relaciones entre ellas.
+
+Este diagrama permite entender cómo se organizará el código del sistema y cómo interactúan sus componentes.
+
+### 9.2 Diagrama de Actividades
+
+El diagrama de actividades representa el flujo de procesos del sistema.
+
+Muestra paso a paso cómo se realiza una operación, en este caso la reserva de un evento y la generación de una entrada.
+
+Incluye decisiones que permiten visualizar diferentes caminos dependiendo de las condiciones del sistema.
+
+### 9.3 Diagrama de Secuencia
+
+El diagrama de secuencia muestra la interacción entre los diferentes componentes del sistema en el tiempo.
+
+En este caso se representa cómo el usuario interactúa con la interfaz, la lógica de negocio, el acceso a datos y la base de datos para realizar una reserva y generar una entrada.
+
+Además, se evidencia el uso de una arquitectura en capas que organiza el sistema de forma estructurada.
+
+---
+
+## 10. Diseño de Base de Datos (MER y DER)
+
+### Descripción del Diseño
+
+La base de datos fue diseñada para organizar la información del sistema de forma clara, utilizando tablas relacionadas mediante claves primarias y foráneas.
+
+### Modelo Entidad-Relación (MER)
+
+El modelo entidad-relación muestra de manera general cómo está organizado el sistema.
+
+Las principales entidades del sistema son:
+
+Usuario, Empleado, Visitante, Guía, Sala, Evento, Exposición, Entrada, Reserva, Pieza, Inventario, Préstamo y Donación.
+
+#### Relaciones principales
+
+- Un visitante puede tener varias entradas y reservas  
+- Una reserva pertenece a un evento  
+- Un evento se realiza en una sala  
+- Una exposición se presenta en una sala  
+- Un evento está relacionado con un empleado y un guía  
+- Una pieza puede estar en inventario, ser prestada o donada  
+
+### Diagrama Entidad-Relación (DER)
+
+El DER representa la base de datos de forma detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
+
+### Estructura de la Base de Datos
+
+#### Entidades
+
+- Usuario  
+- Empleado  
+- Visitante  
+- Guía  
+- Sala  
+- Evento  
+- Exposición  
+- Entrada  
+- Reserva  
+- Pieza  
+- Inventario  
+- Préstamo  
+- Donación  
+
+#### Relaciones
+
+- USUARIO → EMPLEADO (1:1)  
+- VISITANTE → ENTRADA (1:N)  
+- VISITANTE → RESERVA (1:N)  
+- RESERVA → EVENTO (N:1)  
+- EVENTO → SALA (N:1)  
+- EXPOSICIÓN → SALA (N:1)  
+- EVENTO → EMPLEADO (N:1)  
+- EVENTO → GUÍA (N:1)  
+- PIEZA → INVENTARIO (1:1)  
+- PIEZA → PRÉSTAMO (1:N)  
+- PIEZA → DONACIÓN (1:N)  
+- ENTRADA → EXPOSICIÓN (N:1)  
+
+---
+
+## 11. Prototipos de la Interfaz Gráfica
+
+### Descripción
+
+Los prototipos muestran las pantallas del sistema y cómo el usuario interactúa con ellas.
+
+### Pantalla de Inicio de Sesión
+
+Permite al usuario ingresar al sistema mediante usuario y contraseña.
+
+### Menú Principal del Sistema
+
+Muestra todos los módulos disponibles según el tipo de usuario.
+
+### Módulos del Sistema
+
+- Gestión de Empleados  
+- Gestión de Guías  
+- Gestión de Visitantes  
+- Gestión de Piezas  
+- Control de Inventario  
+- Gestión de Salas  
+- Gestión de Exposiciones  
+- Gestión de Eventos  
+- Gestión de Reservas  
+- Venta de Entradas  
+- Registro de Donaciones  
+- Préstamos de Piezas  
+
+---
+
+## 12. Plan de Pruebas Funcionales
+
+### Descripción
+
+Se utiliza para verificar que cada módulo funcione correctamente.
+
+### Objetivo
+
+Validar que el sistema cumpla con los requerimientos establecidos.
+
+### Casos de Prueba
+
+- Inicio de sesión  
+- Gestión de empleados  
+- Gestión de visitantes  
+- Gestión de piezas  
+- Inventario  
+- Reservas  
+- Entradas  
+
+---
+
+## 13. Manual Técnico
+
+### Introducción
+
+Describe la estructura interna del sistema y su funcionamiento.
+
+### Arquitectura del Sistema
+
+El sistema está basado en programación orientada a objetos y arquitectura en capas.
+
+### Módulos del Sistema
+
+- Usuarios  
+- Visitantes  
+- Empleados  
+- Guías  
+- Salas  
+- Exposiciones  
+- Eventos  
+- Entradas  
+- Reservas  
+- Piezas  
+- Inventario  
+- Préstamos  
+- Donaciones  
+
+### Base de Datos
+
+- Uso de claves primarias (PK)  
+- Uso de claves foráneas (FK)  
+- Integridad de datos  
+- Eliminación de duplicidad  
+
+---
+
+## 14. Manual de Usuario 
+
+### Introducción
+
+Permite al usuario gestionar la información del sistema de manera sencilla.
+
+### Módulos
+
+- Usuarios  
+- Visitantes  
+- Empleados  
+- Guías  
+- Salas  
+- Exposiciones  
+- Eventos  
+- Entradas  
+- Reservas  
+- Piezas  
+- Inventario  
+- Préstamos  
+- Donaciones  
+
+### Salir del Sistema
+
+El sistema permite cerrar la aplicación de forma segura desde el menú principal.
