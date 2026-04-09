@@ -169,208 +169,231 @@ El empleado administra las reservas de visitas, incluyendo fecha, cantidad de vi
 
 ## 8. Diccionario de Datos
 
-### TABLA: CONTRATO
-IdContrato (INT, PK): Identificador del contrato
-NumeroContrato (VARCHAR): Número del contrato
-NombreProveedor (VARCHAR): Nombre del proveedor
-Descripcion (VARCHAR): Descripción del contrato
-Tipo (VARCHAR): Tipo de contrato
-MontoTotal (DECIMAL): Monto total
-FechaInicio (DATE): Fecha de inicio
-FechaVencimiento (DATE): Fecha de vencimiento
-Estado (VARCHAR): Estado del contrato
-Observaciones (VARCHAR): Comentarios adicionales
+### TABLA: Usuario
+
+IdUsuario (INT, PK): Identificador
+NombreUsuario (NVARCHAR): Usuario
+Contrasena (NVARCHAR): Contraseña
+NombreCompleto (NVARCHAR): Nombre completo
+Rol (NVARCHAR): Rol
+Estado (NVARCHAR): Estado
 
 
 
-### TABLA: DONACION
-IdDonacion (INT, PK): Identificador de la donación
-NombreDonante (VARCHAR): Nombre del donante
-EmailDonante (VARCHAR): Correo del donante
-TelefonoDonante (VARCHAR): Teléfono
-Tipo (VARCHAR): Tipo de donación
-Descripcion (VARCHAR): Descripción
-ValorEstimado (DECIMAL): Valor estimado
-FechaDonacion (DATE): Fecha
-Estado (VARCHAR): Estado
+### TABLA: Empleado
+
+IdEmpleado (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Apellido (NVARCHAR): Apellido
+Cargo (NVARCHAR): Cargo
+FechaIngreso (DATE): Fecha de ingreso
+Telefono (NVARCHAR): Teléfono
+Email (NVARCHAR): Correo
+Estado (NVARCHAR): Estado
 
 
 
-### TABLA: EMPLEADO
-IdEmpleado (PK): Identificador
-Nombre: Nombre
-Apellido: Apellido
-Cargo: Cargo
-FechaIngreso: Fecha de ingreso
-Telefono: Teléfono
-Email: Correo
-Estado: Estado
+### TABLA: Visitante
+
+IdVisitante (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Apellido (NVARCHAR): Apellido
+DocumentoIdentidad (NVARCHAR): Documento
+Edad (INT): Edad
+Genero (NVARCHAR): Género
+Nacionalidad (NVARCHAR): Nacionalidad
+Telefono (NVARCHAR): Teléfono
+Email (NVARCHAR): Correo
 
 
 
-### TABLA: ENTRADA
+### TABLA: Proveedor
+
+IdProveedor (INT, PK): Identificador
+RazonSocial (NVARCHAR): Nombre del proveedor
+RNC (NVARCHAR): Registro
+Contacto (NVARCHAR): Contacto
+Telefono (NVARCHAR): Teléfono
+Email (NVARCHAR): Correo
+Direccion (NVARCHAR): Dirección
+Categoria (NVARCHAR): Categoría
+Estado (NVARCHAR): Estado
+FechaRegistro (DATE): Fecha de registro
+
+
+
+#### TABLA: Sala
+
+IdSala (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Capacidad (INT): Capacidad
+Ubicacion (NVARCHAR): Ubicación
+Tipo (NVARCHAR): Tipo
+Estado (NVARCHAR): Estado
+Descripcion (NVARCHAR): Descripción
+
+
+
+
+#### TABLA: Guia
+
+IdGuia (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Apellido (NVARCHAR): Apellido
+Telefono (NVARCHAR): Teléfono
+Email (NVARCHAR): Correo
+Idioma (NVARCHAR): Idioma
+Estado (NVARCHAR): Estado
+IdEmpleado (INT, FK): Empleado
+
+
+
+### TABLA: Inventario
+
+IdInventario (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+CodigoInventario (NVARCHAR): Código
+Categoria (NVARCHAR): Categoría
+Epoca (NVARCHAR): Época
+Material (NVARCHAR): Material
+Ubicacion (NVARCHAR): Ubicación
+ValorEstimado (DECIMAL(18,2)): Valor
+Estado (NVARCHAR): Estado
+FechaIngreso (DATE): Fecha
+Descripcion (NVARCHAR): Descripción
+IdEmpleado (INT, FK): Empleado
+
+
+### TABLA: Exposicion
+
+IdExposicion (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Descripcion (NVARCHAR): Descripción
+FechaInicio (DATE): Inicio
+FechaFin (DATE): Fin
+Estado (NVARCHAR): Estado
+Responsable (NVARCHAR): Responsable
+IdSala (INT, FK): Sala
+
+
+### TABLA: Pieza
+
+IdPieza (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Descripcion (NVARCHAR): Descripción
+Epoca (NVARCHAR): Época
+Material (NVARCHAR): Material
+EstadoConservacion (NVARCHAR): Estado
+Ubicacion (NVARCHAR): Ubicación
+ValorEstimado (DECIMAL(18,2)): Valor
+IdSala (INT, FK): Sala
+
+
+### TABLA: Evento
+
+IdEvento (INT, PK): Identificador
+Nombre (NVARCHAR): Nombre
+Tipo (NVARCHAR): Tipo
+Responsable (NVARCHAR): Responsable
+CapacidadMaxima (INT): Capacidad
+FechaInicio (DATE): Inicio
+FechaFin (DATE): Fin
+Estado (NVARCHAR): Estado
+Descripcion (NVARCHAR): Descripción
+IdSala (INT, FK): Sala
+
+
+### TABLA: Contrato
+
+IdContrato (INT, PK): Identificador
+NumeroContrato (NVARCHAR): Número
+Descripcion (NVARCHAR): Descripción
+Tipo (NVARCHAR): Tipo
+MontoTotal (DECIMAL(18,2)): Monto
+FechaInicio (DATE): Inicio
+FechaVencimiento (DATE): Vencimiento
+Estado (NVARCHAR): Estado
+Observaciones (NVARCHAR): Observaciones
+IdProveedor (INT, FK): Proveedor
+
+### TABLA: Mantenimiento
+
+IdMantenimiento (INT, PK): Identificador
+TipoMantenimiento (NVARCHAR): Tipo
+Descripcion (NVARCHAR): Descripción
+FechaInicio (DATE): Inicio
+FechaFin (DATE): Fin
+Costo (DECIMAL(18,2)): Costo
+Estado (NVARCHAR): Estado
+Observaciones (NVARCHAR): Observaciones
+IdEmpleado (INT, FK): Empleado
+IdSala (INT, FK): Sala
+
+
+### TABLA: Entrada
+
 IdEntrada (INT, PK): Identificador
-NombreVisitante (VARCHAR): Nombre del visitante
-Tipo (VARCHAR): Tipo de entrada
-Precio (DECIMAL): Precio
+Tipo (NVARCHAR): Tipo
+Precio (DECIMAL(18,2)): Precio
 Cantidad (INT): Cantidad
 Fecha (DATE): Fecha
-MetodoPago (VARCHAR): Método de pago
-Observaciones (VARCHAR): Observaciones
+MetodoPago (NVARCHAR): Método de pago
+Observaciones (NVARCHAR): Observaciones
+IdVisitante (INT, FK): Visitante
 
 
 
-#### TABLA: EVENTO
-IdEvento (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Tipo (VARCHAR): Tipo
-Responsable (VARCHAR): Responsable
-CapacidadMaxima (INT): Capacidad máxima
-FechaInicio (DATE): Fecha de inicio
-FechaFin (DATE): Fecha de fin
-Estado (VARCHAR): Estado
-Descripcion (VARCHAR): Descripción
+### TABLA: Reserva
 
-
-
-
-#### TABLA: EXPOSICION
-IdExposicion (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Descripcion (VARCHAR): Descripción
-FechaInicio (DATE): Fecha de inicio
-FechaFin (DATE): Fecha de fin
-Sala (VARCHAR): Sala
-Responsable (VARCHAR): Responsable
-
-
-
-### TABLA: GUIA
-IdGuia (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Apellido (VARCHAR): Apellido
-Telefono (VARCHAR): Teléfono
-Email (VARCHAR): Correo
-Idioma (VARCHAR): Idioma
-Estado (VARCHAR): Estado
-
-
-### TABLA: INVENTARIO
-IdInventario (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-CodigoInventario (VARCHAR): Código
-Categoria (VARCHAR): Categoría
-Epoca (VARCHAR): Época
-Material (VARCHAR): Material
-Ubicacion (VARCHAR): Ubicación
-ValorEstimado (DECIMAL): Valor estimado
-Estado (VARCHAR): Estado
-FechaIngreso (DATE): Fecha de ingreso
-Descripcion (VARCHAR): Descripción
-
-
-### TABLA: MANTENIMIENTO
-IdMantenimiento (INT, PK): Identificador
-TipoMantenimiento (VARCHAR): Tipo
-Descripcion (VARCHAR): Descripción
-Area (VARCHAR): Área
-Responsable (VARCHAR): Responsable
-FechaInicio (DATE): Fecha de inicio
-FechaFin (DATE): Fecha de fin
-Costo (DECIMAL): Costo
-Estado (VARCHAR): Estado
-Observaciones (VARCHAR): Observaciones
-
-
-### TABLA: PIEZA
-IdPieza (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Descripcion (VARCHAR): Descripción
-Epoca (VARCHAR): Época
-Material (VARCHAR): Material
-EstadoConservacion (VARCHAR): Estado
-Ubicacion (VARCHAR): Ubicación
-ValorEstimado (DECIMAL): Valor
-
-
-### TABLA: PRESTAMO
-IdPrestamo (INT, PK): Identificador
-NombrePieza (VARCHAR): Nombre de la pieza
-InstitucionSolicitante (VARCHAR): Institución
-Responsable (VARCHAR): Responsable
-Contacto (VARCHAR): Contacto
-FechaPrestamo (DATE): Fecha préstamo
-FechaDevolucion (DATE): Fecha devolución
-Estado (VARCHAR): Estado
-Condiciones (VARCHAR): Condiciones
-
-
-### TABLA: PROVEEDOR
-IdProveedor (INT, PK): Identificador
-RazonSocial (VARCHAR): Nombre
-RNC (VARCHAR): Identificación
-Contacto (VARCHAR): Contacto
-Telefono (VARCHAR): Teléfono
-Email (VARCHAR): Correo
-Direccion (VARCHAR): Dirección
-Categoria (VARCHAR): Categoría
-Estado (VARCHAR): Estado
-FechaRegistro (DATE): Fecha
-
-
-### TABLA: REPORTE
-IdReporte (INT, PK): Identificador
-Titulo (VARCHAR): Título
-Tipo (VARCHAR): Tipo
-FechaGeneracion (DATE): Fecha
-GeneradoPor (VARCHAR): Usuario
-PeriodoDesde (DATE): Desde
-PeriodoHasta (DATE): Hasta
-Descripcion (VARCHAR): Descripción
-Estado (VARCHAR): Estado
-
-
-
-### TABLA: RESERVA
 IdReserva (INT, PK): Identificador
-NombreVisitante (VARCHAR): Nombre del visitante
 CantidadPersonas (INT): Cantidad
 FechaReserva (DATE): Fecha
-Hora (DATE): Hora
-Tipo (VARCHAR): Tipo
-Estado (VARCHAR): Estado
-Observaciones (VARCHAR): Observaciones
+Hora (DATETIME): Hora
+Tipo (NVARCHAR): Tipo
+Estado (NVARCHAR): Estado
+Observaciones (NVARCHAR): Observaciones
+IdVisitante (INT, FK): Visitante
 
 
-### TABLA: SALA
-IdSala (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Capacidad (INT): Capacidad
-Ubicacion (VARCHAR): Ubicación
-Tipo (VARCHAR): Tipo
-Estado (VARCHAR): Estado
-Descripcion (VARCHAR): Descripción
+### TABLA: Donacion
+
+IdDonacion (INT, PK): Identificador
+NombreDonante (NVARCHAR): Donante
+EmailDonante (NVARCHAR): Correo
+TelefonoDonante (NVARCHAR): Teléfono
+Tipo (NVARCHAR): Tipo
+Descripcion (NVARCHAR): Descripción
+ValorEstimado (DECIMAL(18,2)): Valor
+FechaDonacion (DATE): Fecha
+Estado (NVARCHAR): Estado
 
 
-### TABLA: USUARIO
-IdUsuario (INT, PK): Identificador
-NombreUsuario (VARCHAR): Usuario
-Contrasena (VARCHAR): Contraseña
-NombreCompleto (VARCHAR): Nombre completo
-Rol (VARCHAR): Rol
-Estado (VARCHAR): Estado
+### TABLA: Prestamo
+
+IdPrestamo (INT, PK): Identificador
+InstitucionSolicitante (NVARCHAR): Institución
+Responsable (NVARCHAR): Responsable
+Contacto (NVARCHAR): Contacto
+FechaPrestamo (DATE): Fecha préstamo
+FechaDevolucion (DATE): Fecha devolución
+Estado (NVARCHAR): Estado
+Condiciones (NVARCHAR): Condiciones
+IdPieza (INT, FK): Pieza
 
 
 
-### TABLA: VISITANTE
-IdVisitante (INT, PK): Identificador
-Nombre (VARCHAR): Nombre
-Apellido (VARCHAR): Apellido
-DocumentoIdentidad (VARCHAR): Documento
-Edad (INT): Edad
-Genero (VARCHAR): Género
-Nacionalidad (VARCHAR): Nacionalidad
-Email (VARCHAR): Correo
+### TABLA: Reporte
+
+IdReporte (INT, PK): Identificador
+Titulo (NVARCHAR): Título
+Tipo (NVARCHAR): Tipo
+FechaGeneracion (DATE): Fecha
+GeneradoPor (NVARCHAR): Generado por
+PeriodoDesde (DATE): Desde
+PeriodoHasta (DATE): Hasta
+Descripcion (NVARCHAR): Descripción
+Estado (NVARCHAR): Estado
+IdEmpleado (INT, FK): Empleado
 
 
 
