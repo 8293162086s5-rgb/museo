@@ -1,5 +1,6 @@
 Imports CapaNegocio
 Imports CapaNegocio.CapaNegocio
+Imports CapaDatos
 
 Public Class FrmLogin
 
@@ -8,6 +9,20 @@ Public Class FrmLogin
     Dim maxIntentos As Integer = 3
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Crea la base de datos y las tablas si no existen
+        Try
+            Conexion.InicializarBaseDatos()
+        Catch ex As Exception
+            MessageBox.Show(
+                "Error al inicializar la base de datos:" & Environment.NewLine & Environment.NewLine &
+                ex.Message & Environment.NewLine & Environment.NewLine &
+                "Verifica que SQL Server esté corriendo." & Environment.NewLine &
+                "Instancia configurada: .\SQLEXPRESS",
+                "Error de Base de Datos",
+                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
+        End Try
+
         txtUsuario.Focus()
     End Sub
 

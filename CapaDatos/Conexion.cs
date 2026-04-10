@@ -1,24 +1,147 @@
 using System;
 using System.Data.SqlClient;
-using System.IO;
 
 namespace CapaDatos
 {
     public class Conexion
     {
-        // Ruta relativa: busca museo2.mdf en la misma carpeta del ejecutable
-        // Funciona en cualquier PC sin cambiar nada
-        private static string GetConnectionString()
-        {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string dbPath = Path.Combine(baseDir, "museo2.mdf");
+        // ============================================================
+        //  Cambia esto si tu instancia tiene otro nombre.
+        //  Ejemplos: ".\SQLEXPRESS"  |  "."  |  "localhost"
+        // ============================================================
+        private const string Servidor  = @".\SQLEXPRESS";
+        private const string BaseDatos = "MuseoDB";
 
-            return $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True;Connect Timeout=30";
+        private static string StringConexion =>
+            $"Data Source={Servidor};Initial Catalog={BaseDatos};Integrated Security=True;Connect Timeout=30;";
+
+        private static string StringMaster =>
+            $"Data Source={Servidor};Initial Catalog=master;Integrated Security=True;Connect Timeout=30;";
+
+        // ------------------------------------------------------------
+        //  Llama este método al iniciar la app (en FrmLogin_Load).
+        //  Si falla lanza excepción — el Form la captura y muestra el error.
+        // ------------------------------------------------------------
+        public static void InicializarBaseDatos()
+        {
+            CrearBaseDatosSiNoExiste();
+            CrearTablasSiNoExisten();
+            InsertarDatosIniciales();
         }
 
         public static SqlConnection ObtenerConexion()
         {
-            return new SqlConnection(GetConnectionString());
+            return new SqlConnection(StringConexion);
+        }
+
+        // PASO 1: Crear la base de datos si no existe
+        private static void CrearBaseDatosSiNoExiste()
+        {
+            using (var conn = new SqlConnection(StringMaster))
+            {
+                conn.Open();
+                string sql = $@"
+                    IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = '{BaseDatos}')
+                        CREATE DATABASE [{BaseDatos}];";
+                new SqlCommand(sql, conn).ExecuteNonQuery();
+            }
+        }
+
+        // PASO 2: Crear todas las tablas si no existen
+        private static void CrearTablasSiNoExisten()
+        {
+            using (var conn = new SqlConnection(StringConexion))
+            {
+                conn.Open();
+
+                string[] tablas = {
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Usuario')
+                    CREATE TABLE Usuario (
+                        IdUsuario       INT           IDENTITY(1,1) PRIMARY KEY,
+                        NombreUsuario   NVARCHAR(50)  NOT NULL UNIQUE,
+                        Contrasena      NVARCHAR(100) NOT NULL,
+                        NombreCompleto  NVARCHAR(100) NOT NULL,
+                        Rol             NVARCHAR(30)  NOT NULL,
+                        Estado          NVARCHAR(10)  NOT NULL DEFAULT 'Activo'
+                    )",
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Empleado')
+                    CREATE TABLE Empleado (
+                        IdEmpleado   INT           IDENTITY(1,1) PRIMARY KEY,
+                        Nombre       NVARCHAR(80)  NOT NULL,
+                        Apellido     NVARCHAR(80)  NOT NULL,
+                        Cargo        NVARCHAR(80)  NOT NULL,
+                        FechaIngreso DATE          NOT NULL,
+                        Telefono     NVARCHAR(20)  NULL,
+                        Email        NVARCHAR(100) NULL,
+                        Estado       NVARCHAR(10)  NOT NULL DEFAULT 'Activo'
+                    )",
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Guia')
+                    CREATE TABLE Guia (
+                        IdGuia   INT           IDENTITY(1,1) PRIMARY KEY,
+                        Nombre   NVARCHAR(80)  NOT NULL,
+                        Apellido NVARCHAR(80)  NOT NULL,
+                        Telefono NVARCHAR(20)  NULL,
+                        Email    NVARCHAR(100) NULL,
+                        Idioma   NVARCHAR(50)  NOT NULL,
+                        Estado   NVARCHAR(10)  NOT NULL DEFAULT 'Activo'
+                    )",
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Visitante')
+                    CREATE TABLE Visitante (
+                        IdVisitante        INT           IDENTITY(1,1) PRIMARY KEY,
+                        Nombre             NVARCHAR(80)  NOT NULL,
+                        Apellido           NVARCHAR(80)  NOT NULL,
+                        DocumentoIdentidad NVARCHAR(30)  NOT NULL,
+                        Edad               INT           NOT NULL,
+                        Genero             NVARCHAR(15)  NOT NULL,
+                        Nacionalidad       NVARCHAR(50)  NOT NULL,
+                        Email              NVARCHAR(100) NULL
+                    )",
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Exposicion')
+                    CREATE TABLE Exposicion (
+                        IdExposicion INT           IDENTITY(1,1) PRIMARY KEY,
+                        Nombre       NVARCHAR(100) NOT NULL,
+                        Descripcion  NVARCHAR(500) NULL,
+                        FechaInicio  DATE          NOT NULL,
+                        FechaFin     DATE          NOT NULL,
+                        Sala         NVARCHAR(50)  NOT NULL,
+                        Responsable  NVARCHAR(100) NOT NULL
+                    )",
+
+                    @"IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Pieza')
+                    CREATE TABLE Pieza (
+                        IdPieza            INT           IDENTITY(1,1) PRIMARY KEY,
+                        Nombre             NVARCHAR(100) NOT NULL,
+                        Descripcion        NVARCHAR(500) NULL,
+                        Epoca              NVARCHAR(80)  NULL,
+                        Material           NVARCHAR(80)  NULL,
+                        EstadoConservacion NVARCHAR(30)  NOT NULL,
+                        Ubicacion          NVARCHAR(100) NULL,
+                        ValorEstimado      DECIMAL(18,2) NOT NULL DEFAULT 0
+                    )"
+                };
+
+                foreach (var sql in tablas)
+                    new SqlCommand(sql, conn).ExecuteNonQuery();
+            }
+        }
+
+        // PASO 3: Usuario admin por defecto
+        private static void InsertarDatosIniciales()
+        {
+            using (var conn = new SqlConnection(StringConexion))
+            {
+                conn.Open();
+                string sql = @"
+                    IF NOT EXISTS (SELECT 1 FROM Usuario WHERE NombreUsuario = 'admin')
+                    INSERT INTO Usuario (NombreUsuario, Contrasena, NombreCompleto, Rol, Estado)
+                    VALUES ('admin', 'admin123', 'Administrador del Sistema', 'Admin', 'Activo')";
+                new SqlCommand(sql, conn).ExecuteNonQuery();
+            }
         }
     }
 }
