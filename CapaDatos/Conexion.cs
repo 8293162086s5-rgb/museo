@@ -5,10 +5,7 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        // ============================================================
-        //  Cambia esto si tu instancia tiene otro nombre.
-        //  Ejemplos: ".\SQLEXPRESS"  |  "."  |  "localhost"
-        // ============================================================
+        
         private const string Servidor  = @".\SQLEXPRESS";
         private const string BaseDatos = "MuseoDB";
 
@@ -18,10 +15,7 @@ namespace CapaDatos
         private static string StringMaster =>
             $"Data Source={Servidor};Initial Catalog=master;Integrated Security=True;Connect Timeout=30;";
 
-        // ------------------------------------------------------------
-        //  Llama este método al iniciar la app (en FrmLogin_Load).
-        //  Si falla lanza excepción — el Form la captura y muestra el error.
-        // ------------------------------------------------------------
+        
         public static void InicializarBaseDatos()
         {
             CrearBaseDatosSiNoExiste();
@@ -34,7 +28,7 @@ namespace CapaDatos
             return new SqlConnection(StringConexion);
         }
 
-        // PASO 1: Crear la base de datos si no existe
+        
         private static void CrearBaseDatosSiNoExiste()
         {
             using (var conn = new SqlConnection(StringMaster))
@@ -47,7 +41,7 @@ namespace CapaDatos
             }
         }
 
-        // PASO 2: Crear todas las tablas si no existen
+        
         private static void CrearTablasSiNoExisten()
         {
             using (var conn = new SqlConnection(StringConexion))
@@ -130,7 +124,7 @@ namespace CapaDatos
             }
         }
 
-        // PASO 3: Usuario admin por defecto
+        
         private static void InsertarDatosIniciales()
         {
             using (var conn = new SqlConnection(StringConexion))

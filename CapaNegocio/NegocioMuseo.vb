@@ -3,9 +3,7 @@ Imports CapaDatos
 
 Namespace CapaNegocio
 
-    ' =============================================
-    '  NEGOCIO: Empleado
-    ' =============================================
+
     Public Class EmpleadoBL
         Private dao As New EmpleadoDAO()
 
@@ -33,9 +31,7 @@ Namespace CapaNegocio
         End Sub
     End Class
 
-    ' =============================================
-    '  NEGOCIO: Guia
-    ' =============================================
+
     Public Class GuiaBL
         Private dao As New GuiaDAO()
 
@@ -62,9 +58,7 @@ Namespace CapaNegocio
         End Sub
     End Class
 
-    ' =============================================
-    '  NEGOCIO: Visitante
-    ' =============================================
+
     Public Class VisitanteBL
         Private dao As New VisitanteDAO()
 
@@ -92,9 +86,7 @@ Namespace CapaNegocio
         End Sub
     End Class
 
-    ' =============================================
-    '  NEGOCIO: Exposicion
-    ' =============================================
+
     Public Class ExposicionBL
         Private dao As New ExposicionDAO()
 
@@ -121,9 +113,7 @@ Namespace CapaNegocio
         End Sub
     End Class
 
-    ' =============================================
-    '  NEGOCIO: Pieza
-    ' =============================================
+
     Public Class PiezaBL
         Private dao As New PiezaDAO()
 

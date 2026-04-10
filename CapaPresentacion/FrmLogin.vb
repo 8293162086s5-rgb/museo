@@ -81,4 +81,18 @@ Public Class FrmLogin
         Application.Exit()
     End Sub
 
+    Private Sub InitializeComponent()
+        Me.SuspendLayout()
+        '
+        'FrmLogin
+        '
+        Me.ClientSize = New System.Drawing.Size(282, 253)
+        Me.Name = "FrmLogin"
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Private Sub FrmLogin_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
