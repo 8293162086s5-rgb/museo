@@ -488,7 +488,7 @@ Este modelo ayuda a entender cómo se conecta toda la información dentro del si
 El DER representa la base de datos de forma más detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
 
 
-![Diagrama DER](img/DIAGRAMADER.png)
+![Diagrama DER](img/DIAGRAMADER.jpeg) 
 
 
 ### Tablas principales
