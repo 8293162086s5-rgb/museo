@@ -171,229 +171,231 @@ El empleado administra las reservas de visitas, incluyendo fecha, cantidad de vi
 
 ### TABLA: Usuario
 
-IdUsuario (INT, PK): Identificador
-NombreUsuario (NVARCHAR): Usuario
-Contrasena (NVARCHAR): Contraseña
-NombreCompleto (NVARCHAR): Nombre completo
-Rol (NVARCHAR): Rol
-Estado (NVARCHAR): Estado
+
+IdUsuario (INT, PK): Identificador único del usuario.
+NombreUsuario (NVARCHAR): Nombre de usuario para iniciar sesión.
+Contrasena (NVARCHAR): Contraseña del usuario.
+NombreCompleto (NVARCHAR): Nombre y apellido del usuario.
+Rol (NVARCHAR): Rol dentro del sistema (Admin, Operador, etc.).
+Estado (NVARCHAR): Estado de la cuenta (Activo / Inactivo).
 
 
 
 ### TABLA: Empleado
 
-IdEmpleado (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Apellido (NVARCHAR): Apellido
-Cargo (NVARCHAR): Cargo
-FechaIngreso (DATE): Fecha de ingreso
-Telefono (NVARCHAR): Teléfono
-Email (NVARCHAR): Correo
-Estado (NVARCHAR): Estado
+dEmpleado (INT, PK): Identificador único del empleado.
+Nombre (NVARCHAR): Nombre del empleado.
+Apellido (NVARCHAR): Apellido del empleado.
+Cargo (NVARCHAR): Puesto dentro del museo.
+FechaIngreso (DATE): Fecha de ingreso.
+Telefono (NVARCHAR): Teléfono de contacto.
+Email (NVARCHAR): Correo electrónico.
+Estado (NVARCHAR): Estado del empleado.
 
 
 
 ### TABLA: Visitante
 
-IdVisitante (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Apellido (NVARCHAR): Apellido
-DocumentoIdentidad (NVARCHAR): Documento
-Edad (INT): Edad
-Genero (NVARCHAR): Género
-Nacionalidad (NVARCHAR): Nacionalidad
-Telefono (NVARCHAR): Teléfono
-Email (NVARCHAR): Correo
+IdVisitante (INT, PK): Identificador único del visitante.
+Nombre (NVARCHAR): Nombre del visitante.
+Apellido (NVARCHAR): Apellido del visitante.
+DocumentoIdentidad (NVARCHAR): Documento de identidad.
+Edad (INT): Edad del visitante.
+Genero (NVARCHAR): Género.
+Nacionalidad (NVARCHAR): País de origen.
+Telefono (NVARCHAR): Teléfono.
+Email (NVARCHAR): Correo electrónico.
 
 
 
 ### TABLA: Proveedor
 
-IdProveedor (INT, PK): Identificador
-RazonSocial (NVARCHAR): Nombre del proveedor
-RNC (NVARCHAR): Registro
-Contacto (NVARCHAR): Contacto
-Telefono (NVARCHAR): Teléfono
-Email (NVARCHAR): Correo
-Direccion (NVARCHAR): Dirección
-Categoria (NVARCHAR): Categoría
-Estado (NVARCHAR): Estado
-FechaRegistro (DATE): Fecha de registro
+IdProveedor (INT, PK): Identificador único del proveedor.
+RazonSocial (NVARCHAR): Nombre comercial.
+RNC (NVARCHAR): Registro fiscal.
+Contacto (NVARCHAR): Persona de contacto.
+Telefono (NVARCHAR): Teléfono.
+Email (NVARCHAR): Correo electrónico.
+Direccion (NVARCHAR): Dirección.
+Categoria (NVARCHAR): Tipo de proveedor.
+Estado (NVARCHAR): Estado del proveedor.
+FechaRegistro (DATE): Fecha de registro.
 
 
 
 #### TABLA: Sala
 
-IdSala (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Capacidad (INT): Capacidad
-Ubicacion (NVARCHAR): Ubicación
-Tipo (NVARCHAR): Tipo
-Estado (NVARCHAR): Estado
-Descripcion (NVARCHAR): Descripción
+IdSala (INT, PK): Identificador único.
+Nombre (NVARCHAR): Nombre de la sala.
+Capacidad (INT): Capacidad máxima.
+Ubicacion (NVARCHAR): Ubicación física.
+Tipo (NVARCHAR): Tipo de sala.
+Estado (NVARCHAR): Estado de la sala.
+Descripcion (NVARCHAR): Descripción.
 
 
 
 
 #### TABLA: Guia
 
-IdGuia (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Apellido (NVARCHAR): Apellido
-Telefono (NVARCHAR): Teléfono
-Email (NVARCHAR): Correo
-Idioma (NVARCHAR): Idioma
-Estado (NVARCHAR): Estado
-IdEmpleado (INT, FK): Empleado
+IdGuia (INT, PK): Identificador único del guía.
+Nombre (NVARCHAR): Nombre.
+Apellido (NVARCHAR): Apellido.
+Telefono (NVARCHAR): Teléfono.
+Email (NVARCHAR): Correo.
+Idioma (NVARCHAR): Idiomas que domina.
+Estado (NVARCHAR): Estado del guía.
+IdEmpleado (INT, FK): Relación con empleado.
 
 
 
 ### TABLA: Inventario
 
-IdInventario (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-CodigoInventario (NVARCHAR): Código
-Categoria (NVARCHAR): Categoría
-Epoca (NVARCHAR): Época
-Material (NVARCHAR): Material
-Ubicacion (NVARCHAR): Ubicación
-ValorEstimado (DECIMAL(18,2)): Valor
-Estado (NVARCHAR): Estado
-FechaIngreso (DATE): Fecha
-Descripcion (NVARCHAR): Descripción
-IdEmpleado (INT, FK): Empleado
+IdInventario (INT, PK): Identificador único.
+Nombre (NVARCHAR): Nombre del ítem.
+CodigoInventario (NVARCHAR): Código interno.
+Categoria (NVARCHAR): Categoría.
+Epoca (NVARCHAR): Época histórica.
+Material (NVARCHAR): Material.
+Ubicacion (NVARCHAR): Ubicación.
+ValorEstimado (DECIMAL): Valor económico.
+Estado (NVARCHAR): Estado del ítem.
+FechaIngreso (DATE): Fecha de ingreso.
+Descripcion (NVARCHAR): Descripción.
+IdEmpleado (INT, FK): Responsable.
 
 
 ### TABLA: Exposicion
 
-IdExposicion (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Descripcion (NVARCHAR): Descripción
-FechaInicio (DATE): Inicio
-FechaFin (DATE): Fin
-Estado (NVARCHAR): Estado
-Responsable (NVARCHAR): Responsable
-IdSala (INT, FK): Sala
+IdExposicion (INT, PK): Identificador único.
+Nombre (NVARCHAR): Nombre de la exposición.
+Descripcion (NVARCHAR): Descripción.
+FechaInicio (DATE): Fecha de inicio.
+FechaFin (DATE): Fecha de fin.
+Estado (NVARCHAR): Estado.
+Responsable (NVARCHAR): Encargado.
+IdSala (INT, FK): Sala asignada.
 
 
 ### TABLA: Pieza
 
-IdPieza (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Descripcion (NVARCHAR): Descripción
-Epoca (NVARCHAR): Época
-Material (NVARCHAR): Material
-EstadoConservacion (NVARCHAR): Estado
-Ubicacion (NVARCHAR): Ubicación
-ValorEstimado (DECIMAL(18,2)): Valor
-IdSala (INT, FK): Sala
+IdPieza (INT, PK): Identificador único.
+Nombre (NVARCHAR): Nombre de la pieza.
+Descripcion (NVARCHAR): Descripción.
+Epoca (NVARCHAR): Época.
+Material (NVARCHAR): Material.
+EstadoConservacion (NVARCHAR): Estado físico.
+Ubicacion (NVARCHAR): Ubicación.
+ValorEstimado (DECIMAL): Valor.
+IdSala (INT, FK): Sala.
 
 
 ### TABLA: Evento
 
-IdEvento (INT, PK): Identificador
-Nombre (NVARCHAR): Nombre
-Tipo (NVARCHAR): Tipo
-Responsable (NVARCHAR): Responsable
-CapacidadMaxima (INT): Capacidad
-FechaInicio (DATE): Inicio
-FechaFin (DATE): Fin
-Estado (NVARCHAR): Estado
-Descripcion (NVARCHAR): Descripción
-IdSala (INT, FK): Sala
+IdEvento (INT, PK): Identificador único.
+Nombre (NVARCHAR): Nombre del evento.
+Tipo (NVARCHAR): Tipo de evento.
+Responsable (NVARCHAR): Organizador.
+CapacidadMaxima (INT): Capacidad.
+FechaInicio (DATE): Inicio.
+FechaFin (DATE): Fin.
+Estado (NVARCHAR): Estado.
+Descripcion (NVARCHAR): Descripción.
+IdSala (INT, FK): Sala.
 
 
 ### TABLA: Contrato
 
-IdContrato (INT, PK): Identificador
-NumeroContrato (NVARCHAR): Número
-Descripcion (NVARCHAR): Descripción
-Tipo (NVARCHAR): Tipo
-MontoTotal (DECIMAL(18,2)): Monto
-FechaInicio (DATE): Inicio
-FechaVencimiento (DATE): Vencimiento
-Estado (NVARCHAR): Estado
-Observaciones (NVARCHAR): Observaciones
-IdProveedor (INT, FK): Proveedor
+IdContrato (INT, PK): Identificador único.
+NumeroContrato (NVARCHAR): Código.
+Descripcion (NVARCHAR): Detalle.
+Tipo (NVARCHAR): Tipo de contrato.
+MontoTotal (DECIMAL): Monto.
+FechaInicio (DATE): Inicio.
+FechaVencimiento (DATE): Fin.
+Estado (NVARCHAR): Estado.
+Observaciones (NVARCHAR): Notas.
+IdProveedor (INT, FK): Proveedor.
+
 
 ### TABLA: Mantenimiento
 
-IdMantenimiento (INT, PK): Identificador
-TipoMantenimiento (NVARCHAR): Tipo
-Descripcion (NVARCHAR): Descripción
-FechaInicio (DATE): Inicio
-FechaFin (DATE): Fin
-Costo (DECIMAL(18,2)): Costo
-Estado (NVARCHAR): Estado
-Observaciones (NVARCHAR): Observaciones
-IdEmpleado (INT, FK): Empleado
-IdSala (INT, FK): Sala
+IdMantenimiento (INT, PK): Identificador.
+TipoMantenimiento (NVARCHAR): Tipo.
+Descripcion (NVARCHAR): Descripción.
+FechaInicio (DATE): Inicio.
+FechaFin (DATE): Fin.
+Costo (DECIMAL): Costo.
+Estado (NVARCHAR): Estado.
+Observaciones (NVARCHAR): Notas.
+IdEmpleado (INT, FK): Empleado.
+IdSala (INT, FK): Sala.
 
 
 ### TABLA: Entrada
 
-IdEntrada (INT, PK): Identificador
-Tipo (NVARCHAR): Tipo
-Precio (DECIMAL(18,2)): Precio
-Cantidad (INT): Cantidad
-Fecha (DATE): Fecha
-MetodoPago (NVARCHAR): Método de pago
-Observaciones (NVARCHAR): Observaciones
-IdVisitante (INT, FK): Visitante
+IdEntrada (INT, PK): Identificador.
+Tipo (NVARCHAR): Tipo de entrada.
+Precio (DECIMAL): Precio.
+Cantidad (INT): Cantidad.
+Fecha (DATE): Fecha.
+MetodoPago (NVARCHAR): Método de pago.
+Observaciones (NVARCHAR): Notas.
+IdVisitante (INT, FK): Visitante.
 
 
 
 ### TABLA: Reserva
 
-IdReserva (INT, PK): Identificador
-CantidadPersonas (INT): Cantidad
-FechaReserva (DATE): Fecha
-Hora (DATETIME): Hora
-Tipo (NVARCHAR): Tipo
-Estado (NVARCHAR): Estado
-Observaciones (NVARCHAR): Observaciones
-IdVisitante (INT, FK): Visitante
+IdReserva (INT, PK): Identificador.
+CantidadPersonas (INT): Cantidad.
+FechaReserva (DATE): Fecha.
+Hora (DATETIME): Hora.
+Tipo (NVARCHAR): Tipo.
+Estado (NVARCHAR): Estado.
+Observaciones (NVARCHAR): Notas.
+IdVisitante (INT, FK): Visitante.
 
 
 ### TABLA: Donacion
 
-IdDonacion (INT, PK): Identificador
-NombreDonante (NVARCHAR): Donante
-EmailDonante (NVARCHAR): Correo
-TelefonoDonante (NVARCHAR): Teléfono
-Tipo (NVARCHAR): Tipo
-Descripcion (NVARCHAR): Descripción
-ValorEstimado (DECIMAL(18,2)): Valor
-FechaDonacion (DATE): Fecha
-Estado (NVARCHAR): Estado
+IdDonacion (INT, PK): Identificador.
+NombreDonante (NVARCHAR): Donante.
+EmailDonante (NVARCHAR): Correo.
+TelefonoDonante (NVARCHAR): Teléfono.
+Tipo (NVARCHAR): Tipo.
+Descripcion (NVARCHAR): Descripción.
+ValorEstimado (DECIMAL): Valor.
+FechaDonacion (DATE): Fecha.
+Estado (NVARCHAR): Estado.
 
 
 ### TABLA: Prestamo
 
-IdPrestamo (INT, PK): Identificador
-InstitucionSolicitante (NVARCHAR): Institución
-Responsable (NVARCHAR): Responsable
-Contacto (NVARCHAR): Contacto
-FechaPrestamo (DATE): Fecha préstamo
-FechaDevolucion (DATE): Fecha devolución
-Estado (NVARCHAR): Estado
-Condiciones (NVARCHAR): Condiciones
-IdPieza (INT, FK): Pieza
+IdPrestamo (INT, PK): Identificador.
+InstitucionSolicitante (NVARCHAR): Institución.
+Responsable (NVARCHAR): Responsable.
+Contacto (NVARCHAR): Contacto.
+FechaPrestamo (DATE): Fecha.
+FechaDevolucion (DATE): Devolución.
+Estado (NVARCHAR): Estado.
+Condiciones (NVARCHAR): Condiciones.
+IdPieza (INT, FK): Pieza.
 
 
 
 ### TABLA: Reporte
 
-IdReporte (INT, PK): Identificador
-Titulo (NVARCHAR): Título
-Tipo (NVARCHAR): Tipo
-FechaGeneracion (DATE): Fecha
-GeneradoPor (NVARCHAR): Generado por
-PeriodoDesde (DATE): Desde
-PeriodoHasta (DATE): Hasta
-Descripcion (NVARCHAR): Descripción
-Estado (NVARCHAR): Estado
-IdEmpleado (INT, FK): Empleado
+IdReporte (INT, PK): Identificador.
+Titulo (NVARCHAR): Título.
+Tipo (NVARCHAR): Tipo.
+FechaGeneracion (DATE): Fecha.
+GeneradoPor (NVARCHAR): Autor.
+PeriodoDesde (DATE): Desde.
+PeriodoHasta (DATE): Hasta.
+Descripcion (NVARCHAR): Descripción.
+Estado (NVARCHAR): Estado.
+IdEmpleado (INT, FK): Empleado.
 
 
 
