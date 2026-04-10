@@ -485,122 +485,41 @@ Este modelo ayuda a entender cómo se conecta toda la información dentro del si
 
 ### Diagrama Entidad-Relación (DER)
 
-El DER representa la base de datos de forma más detallada, mostrando las tablas, sus campos principales y las relaciones entre ellas.
+El Diagrama Entidad-Relación (DER) representa la estructura lógica de la base de datos del sistema de gestión de museo. En este modelo se muestran las tablas principales, sus relaciones y cómo se organiza la información dentro del sistema.
+Su objetivo es definir cómo se almacenan y se conectan los datos, permitiendo que el sistema funcione de manera ordenada y eficiente.
+
 
 
 ![Diagrama DER](img/DIAGRAMADER.jpeg) 
 
 
-### Tablas principales
 
-- Usuario: IdUsuario como clave primaria  
-- Empleado: IdEmpleado como clave primaria y IdUsuario como clave foránea  
-- Visitante: IdVisitante como clave primaria  
-- Evento: IdEvento como clave primaria, con IdSala, IdEmpleado e IdGuia como claves foráneas  
-- Exposición: IdExposicion como clave primaria y IdSala como clave foránea  
-- Entrada: IdEntrada como clave primaria, con IdVisitante e IdExposicion como claves foráneas  
-- Reserva: IdReserva como clave primaria, con IdVisitante e IdEvento como claves foráneas  
-- Pieza: IdPieza como clave primaria  
-- Inventario: IdInventario como clave primaria y IdPieza como clave foránea  
-- Préstamo: IdPrestamo como clave primaria y IdPieza como clave foránea  
-- Donación: IdDonacion como clave primaria y IdPieza como clave foránea  
-
-Permite ver cómo se organizan los datos en la base de datos y cómo se relacionan entre sí.
+### Estructura del sistema
 
 
-### Estructura de la Base de Datos
-
-#### Entidades
-
-- Usuario  
-- Empleado  
-- Visitante  
-- Guía  
-- Sala  
-- Evento  
-- Exposición  
-- Entrada  
-- Reserva  
-- Pieza  
-- Inventario  
-- Préstamo  
-- Donación  
+El sistema está dividido en diferentes módulos que permiten gestionar todas las áreas del museo:
+ - Gestión de usuarios y empleados, donde se controla el acceso al sistema y la información del personal.
+ - Gestión de visitantes, que incluye el registro de visitantes, entradas y reservas.
+ - Gestión de eventos y exposiciones, donde se organizan las actividades del museo.
+ - Gestión de piezas e inventario, que permite controlar las obras y su estado.
+ - Gestión administrativa, donde se manejan proveedores, contratos, mantenimiento y reportes.
 
 
-#### Relaciones
-
-- USUARIO → EMPLEADO (1:1)  
-
-- VISITANTE → ENTRADA (1:N)  
-- VISITANTE → RESERVA (1:N)  
-
-- RESERVA → EVENTO (N:1)  
-
-- EVENTO → SALA (N:1)  
-- EXPOSICIÓN → SALA (N:1)  
-- EVENTO → EMPLEADO (N:1)  
-- EVENTO → GUÍA (N:1)  
-
-- PIEZA → INVENTARIO (1:1)  
-
-- PIEZA → PRÉSTAMO (1:N)  
-- PIEZA → DONACIÓN (1:N)  
-
-- ENTRADA → EXPOSICIÓN (N:1)  
+#### Relaciones Principales
+Las relaciones entre las tablas permiten conectar la información del sistema. Algunas de las más importantes son:
+ - Un usuario está asociado a un empleado.
+ - Un empleado puede gestionar varios eventos.
+ - Un evento se realiza en una sala.
+ - Una sala puede contener varias exposiciones.
+ - Un visitante puede realizar varias reservas y adquirir varias entradas.
+ - Cada entrada corresponde a una exposición.
+ - Cada reserva está asociada a un evento.
+ - Una pieza pertenece a un inventario y puede ser prestada o donada.
 
 
-### Tablas y Claves
+### Importancia del DER en el Sistema
+Este diagrama es fundamental porque permite entender cómo está organizada la base de datos antes de su implementación. Además, ayuda a evitar errores en el diseño, mejora la organización de la información y facilita el desarrollo del sistema.
 
-#### Usuario
-- IdUsuario (PK)
-
-#### Empleado
-- IdEmpleado (PK)  
-- IdUsuario (FK)
-
-#### Visitante
-- IdVisitante (PK)
-
-#### Guía
-- IdGuia (PK)
-
-#### Sala
-- IdSala (PK)
-
-#### Evento
-- IdEvento (PK)  
-- IdSala (FK)  
-- IdEmpleado (FK)  
-- IdGuia (FK)
-
-#### Exposición
-- IdExposicion (PK)  
-- IdSala (FK)
-
-#### Entrada
-- IdEntrada (PK)  
-- IdVisitante (FK)  
-- IdExposicion (FK)
-
-#### Reserva
-- IdReserva (PK)  
-- IdVisitante (FK)  
-- IdEvento (FK)
-
-#### Pieza
-- IdPieza (PK)
-
-#### Inventario
-- IdInventario (PK)  
-- IdPieza (FK)
-
-#### Préstamo
-- IdPrestamo (PK)  
-- IdPieza (FK)
-
-#### Donación
-- IdDonacion (PK)  
-- IdPieza (FK)
 
 
 ### Conclusión
